@@ -1,0 +1,24 @@
+/** @format */
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	height: 10vh;
+	background-color: #e6e6e6;
+	width: 100vw;
+	background-color: $primary;
+	color: $secondary;
+
+	ul {
+		display: flex;
+		justify-content: flex-end;
+		list-style-type: none;
+		width: 85vw;
+		align-items: center;
+		font-size: 1.15rem;
+
+		li {
+			padding: 0 20px;
+		}
+	}
+}
