@@ -20,5 +20,16 @@
 		li {
 			padding: 0 20px;
 		}
+
+		a {
+			text-decoration: none;
+		}
+		.resume {
+			border: 3px solid $secondary;
+			color: white;
+			padding: 10px 20px;
+			border-radius: 10px;
+			// font-style: normal;
+		}
 	}
 }
