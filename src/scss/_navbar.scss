@@ -4,10 +4,12 @@
 	display: flex;
 	justify-content: space-between;
 	height: 10vh;
-	background-color: #e6e6e6;
 	width: 100vw;
 	background-color: $primary;
-	color: $secondary;
+	// color: $secondary;
+	position: fixed;
+	top: 0;
+	box-shadow: 0 0 10px $secondary;
 
 	ul {
 		display: flex;
@@ -19,14 +21,19 @@
 
 		li {
 			padding: 0 20px;
+			transition: all 0.3s ease;
+			&:hover {
+				color: $secondary;
+			}
 		}
 
 		a {
+			color: #fff;
 			text-decoration: none;
 		}
 		.resume {
 			border: 3px solid $secondary;
-			color: white;
+			color: $secondary;
 			padding: 10px 20px;
 			border-radius: 10px;
 			// font-style: normal;

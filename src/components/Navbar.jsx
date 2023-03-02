@@ -6,10 +6,18 @@ const Navbar = () => {
 	return (
 		<div className="navbar">
 			<ul>
-				<li>About</li>
-				<li>Skills</li>
-				<li>Projects</li>
-				<li>Contact</li>
+				<a href="#about">
+					<li>About</li>
+				</a>
+				<a href="#skills">
+					<li>Skills</li>
+				</a>
+				<a href="#projects">
+					<li>Projects</li>
+				</a>
+				<a href="">
+					<li>Contact</li>
+				</a>
 				<a
 					href="https://drive.google.com/file/d/19R061U9vAzzifzcBuTVcZDU4lAqg6ASL/view?usp=share_link"
 					download
