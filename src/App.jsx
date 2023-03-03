@@ -17,6 +17,7 @@ import Education from "./components/Education";
 // External libraries
 import AOS from "aos";
 import PageProgress from "react-page-progress";
+import "animate.css";
 
 function App() {
 	const [scroll, setScroll] = useState(0);

@@ -7,22 +7,22 @@ const Navbar = () => {
 		<div id="navbar" className="navbar">
 			<ul>
 				<a href="#about">
-					<li>
+					<li className="animate__animated animate__fadeInUp">
 						<span className="index-no">01.</span>&nbsp;About
 					</li>
 				</a>
 				<a href="#skills">
-					<li>
+					<li className="animate__animated animate__fadeInDown">
 						<span className="index-no">02.</span>&nbsp;Skills
 					</li>
 				</a>
 				<a href="#projects">
-					<li>
+					<li className="animate__animated animate__fadeInUp">
 						<span className="index-no">03.</span>&nbsp;Projects
 					</li>
 				</a>
 				<a href="#education">
-					<li>
+					<li className="animate__animated animate__fadeInDown">
 						<span className="index-no">04.</span>&nbsp;Education
 					</li>
 				</a>

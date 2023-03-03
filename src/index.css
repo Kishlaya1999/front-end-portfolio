@@ -9,6 +9,19 @@ html {
      scroll-behavior: smooth;
 }
 
+body::-webkit-scrollbar {
+     /* width: 20px;
+     background: hsl(224, 37%, 29%); */
+     display: none;
+}
+
+/* body::-webkit-scrollbar-thumb {
+     background-color: #ff6a3d;
+     margin: 0 10px;
+     width: 10px;
+     border-radius: 10px;
+} */
+
 body {
      width: 100vw;
      height: 100vh;
