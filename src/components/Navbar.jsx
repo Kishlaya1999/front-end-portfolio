@@ -4,7 +4,7 @@ import React from "react";
 
 const Navbar = () => {
 	return (
-		<div className="navbar">
+		<div id="navbar" className="navbar">
 			<ul>
 				<a href="#about">
 					<li>
