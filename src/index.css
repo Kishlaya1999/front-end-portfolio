@@ -5,9 +5,9 @@
      font-family: "League Spartan", sans-serif;
 }
 
-/* 
-html,
-body {} */
+html {
+     scroll-behavior: smooth;
+}
 
 body {
      width: 100vw;

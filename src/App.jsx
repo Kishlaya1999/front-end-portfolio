@@ -8,6 +8,8 @@ import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import AOS from "aos";
+import PageProgress from "react-page-progress";
+import Education from "./components/Education";
 
 function App() {
 	AOS.init({
@@ -16,11 +18,23 @@ function App() {
 
 	return (
 		<>
+			<div className="social-media">
+				<ul>
+					<li>
+						<i className="fa-brands fa-github"></i>
+					</li>
+					<li>
+						<i className="fa-brands fa-linkedin-in"></i>
+					</li>
+				</ul>
+			</div>
 			<Navbar />
+			<PageProgress color="#ff6a3d" />
 			<Header />
 			<About />
 			<Skills />
 			<Projects />
+			<Education />
 			<Footer />
 		</>
 	);

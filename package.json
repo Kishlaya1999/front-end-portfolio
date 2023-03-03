@@ -12,6 +12,7 @@
     "aos": "^3.0.0-beta.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-page-progress": "^1.1.1",
     "sass": "^1.58.0"
   },
   "devDependencies": {

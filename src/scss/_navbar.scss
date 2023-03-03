@@ -5,23 +5,30 @@
 	justify-content: space-between;
 	height: 10vh;
 	width: 100vw;
-	background-color: $primary;
+	background-color: rgba(26, 34, 56, 0.5);
 	// color: $secondary;
 	position: fixed;
 	top: 0;
-	box-shadow: 0 0 10px $secondary;
+	box-shadow: 0 0 2px $secondary;
+
+	.index-no {
+		color: $secondary;
+		font-size: 0.98rem;
+	}
 
 	ul {
 		display: flex;
 		justify-content: flex-end;
 		list-style-type: none;
-		width: 85vw;
+		width: 95vw;
 		align-items: center;
 		font-size: 1.15rem;
 
 		li {
 			padding: 0 20px;
 			transition: all 0.3s ease;
+			font-weight: 100;
+			letter-spacing: 1px;
 			&:hover {
 				color: $secondary;
 			}
