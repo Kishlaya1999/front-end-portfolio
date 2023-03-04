@@ -1,13 +1,19 @@
 /** @format */
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600&display=swap");
 
+// Mobile devices – 320px — 480px.
+// iPads, Tablets – 481px — 768px.
+// Small screens, laptops – 769px — 1024px.
+// Desktops, large screens – 1025px — 1200px.
+// Extra large screens, TV – 1201px, and more.
+
 $primary: rgb(26, 34, 56);
 $primary-alternate: hsl(224, 37%, 22%);
 $secondary: #ff6a3d;
 $text-color-1: #9daaf2;
 $text-color-2: #f4db7d;
 
-.social-media {
+.social-media-desktop {
 	position: fixed;
 	bottom: 0;
 	left: 55px;
@@ -39,7 +45,7 @@ $text-color-2: #f4db7d;
 				font-size: 1.5rem;
 				transition: all 0.3s ease;
 				&:hover {
-					color: #fff;
+					color: $text-color-2;
 					cursor: pointer;
 				}
 			}
@@ -63,6 +69,7 @@ $text-color-2: #f4db7d;
 	box-shadow: 0 0 10px $secondary;
 	transition: all 0.3s ease;
 	cursor: pointer;
+	z-index: 5;
 
 	&:hover {
 		transform: translate(0, -10px);
@@ -70,10 +77,6 @@ $text-color-2: #f4db7d;
 }
 
 .header,
-.about,
-.projects,
-.skills,
-.education,
 .footer {
 	width: 100vw;
 	height: 100vh;
@@ -81,6 +84,14 @@ $text-color-2: #f4db7d;
 	justify-content: center;
 	align-items: center;
 	scroll-snap-align: start;
+}
+
+.about,
+.projects,
+.skills,
+.education {
+	width: 100vw;
+	height: 100vh;
 }
 
 .footer {
@@ -102,3 +113,13 @@ $text-color-2: #f4db7d;
 @import "./scss//education";
 
 @import "./scss/footer";
+
+// @media screen and (min-width: 481px) and (max-width: 768px) {
+// }
+
+// Small screens, laptops – 769px — 1024px.
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+	.social-media-desktop {
+		display: none;
+	}
+}

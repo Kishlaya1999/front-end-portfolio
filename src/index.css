@@ -27,6 +27,7 @@ body {
      height: 100vh;
      margin: 0;
      overflow-x: hidden;
+     background-color: rgb(26, 34, 56);
      /* scroll-behavior: smooth; */
 }
 

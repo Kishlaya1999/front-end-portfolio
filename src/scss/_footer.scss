@@ -1,1 +1,13 @@
 /** @format */
+.footer {
+	position: relative;
+	z-index: 1;
+	.main-line {
+		word-spacing: 5px;
+		letter-spacing: 3px;
+		font-size: 1.2rem;
+	}
+	&-name {
+		color: $text-color-2;
+	}
+}

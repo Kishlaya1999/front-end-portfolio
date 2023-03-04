@@ -18,8 +18,11 @@ import Education from "./components/Education";
 import AOS from "aos";
 import PageProgress from "react-page-progress";
 import "animate.css";
+import PacmanLoader from "react-spinners/PacmanLoader ";
+import HashLoader from "react-spinners/HashLoader";
 
 function App() {
+	const [loading, setLoading] = useState(true);
 	const [scroll, setScroll] = useState(0);
 	const [backToTopIsVisible, setBackToTopIsVisible] = useState(false);
 
@@ -28,14 +31,22 @@ function App() {
 	});
 
 	useEffect(() => {
-		if (scroll > 300) {
-			document.getElementById("navbar").classList.add("hide-navbar");
-			setBackToTopIsVisible(true);
-		} else {
-			document.getElementById("navbar").classList.remove("hide-navbar");
-			setBackToTopIsVisible(false);
+		if (loading == false) {
+			if (scroll > 300) {
+				document.getElementById("navbar").classList.add("hide-navbar");
+				setBackToTopIsVisible(true);
+			} else {
+				document.getElementById("navbar").classList.remove("hide-navbar");
+				setBackToTopIsVisible(false);
+			}
 		}
 	}, [scroll]);
+
+	useEffect(() => {
+		setTimeout(() => {
+			setLoading(false);
+		}, 3000);
+	}, []);
 
 	document.addEventListener("scroll", () => {
 		setScroll(document.documentElement.scrollTop);
@@ -43,39 +54,79 @@ function App() {
 
 	return (
 		<>
-			<div className="social-media">
-				<ul>
-					<li>
-						<a href="https://github.com/Kishlaya1999" target="blank">
-							<i className="fa-brands fa-github"></i>
-						</a>
-					</li>
-					<li>
-						<a href="https://www.linkedin.com/in/kishlaya1999/" target="blank">
-							<i className="fa-brands fa-linkedin-in"></i>
-						</a>
-					</li>
-				</ul>
-			</div>
-
-			{backToTopIsVisible ? (
-				<a href="#header">
-					<div className="back-to-top">
-						<i className="fa-solid fa-arrow-up"></i>
-					</div>
-				</a>
+			{loading ? (
+				// <PacmanLoader
+				// 	color=" #ff6a3d"
+				// 	speedMultiplier={1}
+				// 	loading={loading}
+				// 	// width={150}
+				// 	size={25}
+				// 	cssOverride={{
+				// 		display: "inherit",
+				// 		position: "absolute",
+				// 		width: "150px",
+				// 		// height: "6px",
+				// 		overflow: "hidden",
+				// 		backgroundClip: "padding-box",
+				// 		inset: "0",
+				// 		margin: "auto auto",
+				// 		zIndex: "10",
+				// 	}}
+				// />
+				<HashLoader
+					color="#ff6a3d"
+					size={100}
+					cssOverride={{
+						display: "inherit",
+						position: "absolute",
+						// width: "250px",
+						// height: "6px",
+						overflow: "hidden",
+						backgroundClip: "padding-box",
+						inset: "0",
+						margin: "auto auto",
+						zIndex: "10",
+					}}
+				/>
 			) : (
-				""
-			)}
+				<div>
+					<div className="social-media-desktop">
+						<ul>
+							<li>
+								<a href="https://github.com/Kishlaya1999" target="blank">
+									<i className="fa-brands fa-github"></i>
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://www.linkedin.com/in/kishlaya1999/"
+									target="blank">
+									<i className="fa-brands fa-linkedin-in"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
 
-			<Navbar />
-			<PageProgress color="#ff6a3d" />
-			<Header />
-			<About />
-			<Skills />
-			<Projects />
-			<Education />
-			<Footer />
+					{backToTopIsVisible ? (
+						<a href="#header">
+							<div className="back-to-top">
+								<i className="fa-solid fa-arrow-up"></i>
+							</div>
+						</a>
+					) : (
+						""
+					)}
+
+					<Navbar />
+					<PageProgress color="#ff6a3d" />
+					<Header />
+					<About />
+					<Skills />
+					<Projects />
+					<Education />
+					<Footer />
+				</div>
+			)}
 		</>
 	);
 }
