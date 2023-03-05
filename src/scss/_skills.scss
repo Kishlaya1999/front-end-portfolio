@@ -2,4 +2,100 @@
 .skills {
 	background-color: $primary;
 	color: $secondary;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 50px;
+	height: 130vh;
+
+	.skills-heading {
+		font-size: 2rem;
+		margin: 30px 0;
+		// align-self: flex-start;
+		.skill-numbering {
+			color: white;
+			font-size: 1.3rem;
+			font-weight: 100;
+		}
+	}
+
+	.skills-section {
+		// width: 55vw;
+		height: 90vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		// background-color: rgb(209, 209, 209);
+		.skills-tab {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			// gap: 20px;
+			height: 10%;
+			width: 100%;
+			span {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				cursor: pointer;
+				width: 200px;
+				height: 100%;
+				font-size: 1.2rem;
+				background-color: $primary;
+				color: rgba(255, 106, 61, 0.6);
+				user-select: none;
+				transition: all 0.1s ease;
+			}
+			.active-tab {
+				border: 5px solid $secondary;
+				border-width: 0 0 3px 0;
+				color: $secondary;
+			}
+		}
+		.content-section {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 90%;
+			width: 100%;
+			// background-color: $primary-alternate;
+			.tab-contents {
+				display: none;
+				.skills-container {
+					display: grid;
+					grid-template-columns: 1fr 1fr 1fr;
+					grid-template-columns: 1fr 1fr 1fr;
+					gap: 10px 10px;
+				}
+				.skill-img-container {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					padding: 5px;
+					width: 150px;
+					height: 150px;
+					background-color: $primary-alternate;
+					box-shadow: 0 0 3px;
+					transition: all 0.2s ease;
+					img {
+						width: auto;
+						height: 100%;
+					}
+				}
+			}
+			.active-content-tab {
+				display: block;
+			}
+
+			.tools-container {
+				display: flex;
+				width: 100%;
+				justify-content: center;
+				gap: 10px;
+				margin: 10px 0;
+			}
+		}
+	}
 }

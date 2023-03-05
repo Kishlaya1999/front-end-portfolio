@@ -38,10 +38,10 @@
 				letter-spacing: 3px;
 				.header-skill {
 					color: $secondary;
-					text-decoration-line: underline;
-					text-decoration-style: wavy;
-					text-decoration-color: $text-color-2;
-					text-decoration-thickness: 3px;
+					// text-decoration-line: underline;
+					// text-decoration-style: wavy;
+					// text-decoration-color: $text-color-2;
+					// text-decoration-thickness: 3px;
 				}
 			}
 		}
@@ -70,6 +70,7 @@
 				z-index: 1;
 				position: relative;
 				transition: all 0.3s ease;
+				filter: grayscale(1);
 			}
 			// .image-wrapper {
 			// 	// position: absolute;
@@ -84,6 +85,7 @@
 			}
 			img:hover {
 				transform: translate(5px, -5px);
+				filter: grayscale(0);
 			}
 			img:hover + .image-border {
 				background: $secondary;

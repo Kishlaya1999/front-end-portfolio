@@ -26,9 +26,7 @@ function App() {
 	const [scroll, setScroll] = useState(0);
 	const [backToTopIsVisible, setBackToTopIsVisible] = useState(false);
 
-	AOS.init({
-		offset: 150,
-	});
+	AOS.init();
 
 	useEffect(() => {
 		if (loading == false) {
@@ -77,12 +75,10 @@ function App() {
 					color="#ff6a3d"
 					size={100}
 					cssOverride={{
-						display: "inherit",
+						// display: "inherit",
 						position: "absolute",
-						// width: "250px",
-						// height: "6px",
 						overflow: "hidden",
-						backgroundClip: "padding-box",
+						// backgroundClip: "padding-box",
 						inset: "0",
 						margin: "auto auto",
 						zIndex: "10",
@@ -93,14 +89,18 @@ function App() {
 					<div className="social-media-desktop">
 						<ul>
 							<li>
-								<a href="https://github.com/Kishlaya1999" target="blank">
+								<a
+									href="https://github.com/Kishlaya1999"
+									target="blank"
+									title="GitHub">
 									<i className="fa-brands fa-github"></i>
 								</a>
 							</li>
 							<li>
 								<a
 									href="https://www.linkedin.com/in/kishlaya1999/"
-									target="blank">
+									target="blank"
+									title="LinkedIn">
 									<i className="fa-brands fa-linkedin-in"></i>
 								</a>
 							</li>

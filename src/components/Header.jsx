@@ -11,12 +11,15 @@ const Header = () => {
 					<span className="hi">Hi, my name is</span>
 					<span className="name">Kishlaya Kesarwani</span>
 					<span className="header-about">
-						I'm a <span className="header-skill">React JS Developer</span>
+						I'm a{" "}
+						<span className="header-skill" title="Front-End Developer">
+							React JS Developer
+						</span>
 					</span>
 				</div>
 				<div className="header-image">
 					{/* <div className="image-wrapper"></div> */}
-					<img src={myImage} alt="" />
+					<img src={myImage} alt="My Image" />
 					<div className="image-border"></div>
 				</div>
 			</div>
