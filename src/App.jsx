@@ -26,7 +26,9 @@ function App() {
 	const [scroll, setScroll] = useState(0);
 	const [backToTopIsVisible, setBackToTopIsVisible] = useState(false);
 
-	AOS.init();
+	AOS.init({
+		duration: 1000,
+	});
 
 	useEffect(() => {
 		if (loading == false) {

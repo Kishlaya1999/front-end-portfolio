@@ -141,7 +141,7 @@ const Skills = () => {
 						}`}>
 						<div className="tools-container">
 							<div
-								data-aos="zoom-in-up"
+								data-aos="fade-down"
 								data-aos-offset="350"
 								className="skill-img-container"
 								title="Figma">
@@ -150,14 +150,14 @@ const Skills = () => {
 						</div>
 						<div className="tools-container">
 							<div
-								data-aos="zoom-in-up"
+								data-aos="fade-right"
 								data-aos-offset="250"
 								className="skill-img-container"
 								title="Git">
 								<img src={Git} alt="" />
 							</div>
 							<div
-								data-aos="zoom-in-up"
+								data-aos="fade-left"
 								data-aos-offset="250"
 								className="skill-img-container"
 								title="GitHub">
@@ -166,21 +166,21 @@ const Skills = () => {
 						</div>
 						<div className="tools-container">
 							<div
-								data-aos="zoom-in-up"
+								data-aos="fade-up-right"
 								data-aos-offset="150"
 								className="skill-img-container"
 								title="Vite">
 								<img src={Vite} alt="" />
 							</div>
 							<div
-								data-aos="zoom-in-up"
+								data-aos="fade-up"
 								data-aos-offset="150"
 								className="skill-img-container"
 								title="Netlify">
 								<img src={Netlify} alt="" />
 							</div>
 							<div
-								data-aos="zoom-in-up"
+								data-aos="fade-up-left"
 								data-aos-offset="150"
 								className="skill-img-container"
 								title="Webpack">
