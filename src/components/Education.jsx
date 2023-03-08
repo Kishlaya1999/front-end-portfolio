@@ -10,9 +10,7 @@ import OnlineCourse from "../assets/OnlineCourse.jsx";
 const Education = () => {
 	return (
 		<div id="education" className="education">
-			<span className="education-heading">
-				<span className="education-heading-numbering">04.</span>Education
-			</span>
+			<span className="education-heading">Education</span>
 			<VerticalTimeline>
 				<VerticalTimelineElement
 					className="vertical-timeline-element--work"

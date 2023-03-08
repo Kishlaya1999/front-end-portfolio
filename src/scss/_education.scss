@@ -11,12 +11,12 @@
 		font-size: 2rem;
 		color: $secondary;
 		margin: 30px 0;
-
-		.education-heading-numbering {
-			color: white;
-			font-size: 1.3rem;
-			font-weight: 100;
-		}
+	}
+	.education-heading::before {
+		content: "04. ";
+		color: white;
+		font-size: 1.3rem;
+		font-weight: 100;
 	}
 	.date-styles {
 		color: white;

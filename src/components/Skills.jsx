@@ -52,7 +52,7 @@ const Skills = () => {
 								data-aos-offset="350"
 								data-aos-duration="1000"
 								className="skill-img-container"
-								title="React JS">
+								title="Redux">
 								<img src={Redux} alt="" />
 							</div>
 							<div
@@ -60,7 +60,7 @@ const Skills = () => {
 								data-aos-offset="350"
 								data-aos-duration="1000"
 								className="skill-img-container"
-								title="Redux">
+								title="Tailwind">
 								<img src={Tailwind} alt="" />
 							</div>
 							<div
@@ -76,10 +76,10 @@ const Skills = () => {
 								data-aos-offset="250"
 								data-aos-duration="1000"
 								className="skill-img-container"
-								title="Tailwind CSS">
+								title="SCSS">
 								<img src={SCSS} alt="" />
 							</div>
-							<div className="skill-img-container" title="SCSS">
+							<div className="skill-img-container" title="React JS">
 								<img src={ReactJS} alt="" />
 							</div>
 							<div

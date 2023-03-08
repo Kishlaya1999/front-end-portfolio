@@ -10,17 +10,19 @@ const About = () => {
 					About
 				</span>
 				<p data-aos="fade-left">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis itaque
-					magnam odio repellendus, dolore debitis voluptatem sapiente corrupti ipsum
-					sequi alias tenetur quod mollitia neque delectus, iure pariatur. Sequi
-					itaque animi eveniet, rem ullam quo ipsa maiores iure, rerum recusandae
-					reprehenderit nesciunt hic assumenda deserunt dolores. Reprehenderit
-					dolorem est quibusdam ea delectus corporis distinctio minus nulla id,
-					temporibus itaque optio impedit, illum cum. Tenetur, pariatur sapiente.
-					Repudiandae consequatur esse doloremque iste eveniet! Repudiandae
-					aspernatur ducimus doloremque saepe ea est enim eos. Ipsa cupiditate
-					consectetur, ducimus quo error debitis id maxime deleniti magni blanditiis
-					tempora aliquam fuga quod odit iusto laborum?
+					Hello, and welcome to my portfolio website! I am a React developer with a
+					passion for building interactive and engaging web applications. As a recent
+					graduate, I am eager to start my career in the tech industry and contribute
+					my skills.
+				</p>
+
+				<p data-aos="fade-right">
+					{" "}
+					I first discovered my love for coding during my studies in computer
+					science, where I was introduced to the world of web development. Since
+					then, I have been continuously learning and expanding my knowledge of
+					different programming languages and frameworks, with React being my primary
+					area of expertise.
 				</p>
 			</div>
 		</div>
