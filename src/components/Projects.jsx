@@ -7,6 +7,11 @@ const Projects = () => {
 		<div id="projects" className="projects">
 			<div className="project-container">
 				<span className="projects-heading">Projects</span>
+				<div className="personal-projects">
+					<div className="project"></div>
+					<div className="project"></div>
+					<div className="project"></div>
+				</div>
 			</div>
 		</div>
 	);
