@@ -1,9 +1,9 @@
 /** @format */
 
 import React from "react";
-import HabitTracker from "../assets/projects-images/habit_tracker.png";
-import ReactMinifier from "../assets/projects-images/react_minifier.png";
-import SuperheroHunter from "../assets/projects-images/superhero_hunter.png";
+import HabitTracker from "../assets/projects-images/habit_tracker.gif";
+import ReactMinifier from "../assets/projects-images/react_minifier.gif";
+import SuperheroHunter from "../assets/projects-images/superhero_hunter.gif";
 
 const Projects = () => {
 	return (
