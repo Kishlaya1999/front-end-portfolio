@@ -1,7 +1,9 @@
 /** @format */
 
 import React from "react";
-import HTML from "../assets/skill-section-img/skills/HTML.png";
+import HabitTracker from "../assets/projects-images/habit_tracker.png";
+import ReactMinifier from "../assets/projects-images/react_minifier.png";
+import SuperheroHunter from "../assets/projects-images/superhero_hunter.png";
 
 const Projects = () => {
 	return (
@@ -10,25 +12,47 @@ const Projects = () => {
 				<span className="projects-heading">Projects</span>
 				<div className="personal-projects">
 					<div className="project">
-						<figure class="imghvr-stack-up">
-							<img src={HTML} alt="example-image" />
-							<figcaption>
-								<h3 class="ih-fade-down ih-delay-sm ">Oscar Wilde</h3>
-								<p class="ih-zoom-in ih-delay-md">
-									<i>
-										"I have the simplest tastes, I am always satisfied
-										with the best."
-									</i>
-								</p>
-								<a class="ih-fade-up ih-delay-lg button" href="#">
-									Read More
+						<div className="hovereffect">
+							<img className="img-responsive" src={HabitTracker} alt="" />
+							<div className="overlay">
+								<h2>Habit Tracker</h2>
+								<a
+									className="info"
+									href="https://habit-tracker-using-redux.netlify.app/"
+									target="blank">
+									<span>Live link</span>
 								</a>
-							</figcaption>
-							<a href="#"></a>
-						</figure>
+							</div>
+						</div>
 					</div>
-					<div className="project"></div>
-					<div className="project"></div>
+					<div className="project">
+						<div className="hovereffect">
+							<img className="img-responsive" src={ReactMinifier} alt="" />
+							<div className="overlay">
+								<h2>Code Minifier</h2>
+								<a
+									className="info"
+									href="https://react-minifier.netlify.app/"
+									target="blank">
+									<span>Live link</span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div className="project">
+						<div className="hovereffect">
+							<img className="img-responsive" src={SuperheroHunter} alt="" />
+							<div className="overlay">
+								<h2>SUPERHERO HUNTER</h2>
+								<a
+									className="info"
+									href="https://marvel-superhero-hunter.netlify.app/"
+									target="blank">
+									<span>Live link</span>
+								</a>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
