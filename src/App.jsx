@@ -33,10 +33,10 @@ function App() {
 	useEffect(() => {
 		if (loading == false) {
 			if (scroll > 300) {
-				document.getElementById("navbar").classList.add("hide-navbar");
+				document.querySelector(".navbar-container").classList.add("hide-navbar");
 				setBackToTopIsVisible(true);
 			} else {
-				document.getElementById("navbar").classList.remove("hide-navbar");
+				document.querySelector(".navbar-container").classList.remove("hide-navbar");
 				setBackToTopIsVisible(false);
 			}
 		}

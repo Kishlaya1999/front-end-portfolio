@@ -20,6 +20,10 @@ const Projects = () => {
 									className="info"
 									href="https://habit-tracker-using-redux.netlify.app/"
 									target="blank">
+									<p>
+										A react website which allows you to track your
+										habit for 21 days
+									</p>
 									<span>Live link</span>
 								</a>
 							</div>

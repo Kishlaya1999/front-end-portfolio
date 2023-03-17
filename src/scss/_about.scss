@@ -33,3 +33,12 @@
 		}
 	}
 }
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+	.about{
+		.about-container{
+			width:100vw;
+			height:80vh;
+		}
+	}
+}

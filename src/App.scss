@@ -122,3 +122,9 @@ $text-color-2: #f4db7d;
 		display: none;
 	}
 }
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+	.social-media-desktop {
+		display: none;
+	}
+}
