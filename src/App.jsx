@@ -130,6 +130,26 @@ function App() {
 					<Skills />
 					<Projects />
 					<Education />
+					<div className="social-media-small-devices">
+						<a
+							href="https://www.linkedin.com/in/kishlaya1999/"
+							target="blank"
+							title="LinkedIn">
+							<div className="linked-in">
+								<i className="fa-brands fa-linkedin-in"></i>
+								LinkedIn
+							</div>
+						</a>
+						<a
+							href="https://github.com/Kishlaya1999"
+							target="blank"
+							title="GitHub">
+							<div className="github">
+								<i className="fa-brands fa-github"></i>
+								GitHub
+							</div>
+						</a>
+					</div>
 					<Footer />
 				</div>
 			)}
