@@ -18,29 +18,33 @@ import Education from "./components/Education";
 import AOS from "aos";
 import PageProgress from "react-page-progress";
 import "animate.css";
-import PacmanLoader from "react-spinners/PacmanLoader ";
+// import PacmanLoader from "react-spinners/PacmanLoader ";
 import HashLoader from "react-spinners/HashLoader";
 
 function App() {
 	const [loading, setLoading] = useState(true);
-	const [scroll, setScroll] = useState(0);
-	const [backToTopIsVisible, setBackToTopIsVisible] = useState(false);
+	// const [scroll, setScroll] = useState(0);
+	// const [backToTopIsVisible, setBackToTopIsVisible] = useState(false);
 
 	AOS.init({
 		duration: 1000,
 	});
 
-	useEffect(() => {
-		if (loading == false) {
-			if (scroll > 300) {
-				document.querySelector(".navbar-container").classList.add("hide-navbar");
-				setBackToTopIsVisible(true);
-			} else {
-				document.querySelector(".navbar-container").classList.remove("hide-navbar");
-				setBackToTopIsVisible(false);
-			}
-		}
-	}, [scroll]);
+	// const scrollFunction = () => {
+	// 	if (loading == false) {
+	// 		if (scroll > 300) {
+	// 			document.querySelector(".navbar-container").classList.add("hide-navbar");
+	// 			setBackToTopIsVisible(true);
+	// 		} else {
+	// 			document.querySelector(".navbar-container").classList.remove("hide-navbar");
+	// 			setBackToTopIsVisible(false);
+	// 		}
+	// 	}
+	// };
+
+	// useEffect(() => {
+	// 	scrollFunction();
+	// }, [scroll]);
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -48,9 +52,9 @@ function App() {
 		}, 3000);
 	}, []);
 
-	document.addEventListener("scroll", () => {
-		setScroll(document.documentElement.scrollTop);
-	});
+	// document.addEventListener("scroll", () => {
+	// 	setScroll(document.documentElement.scrollTop);
+	// });
 
 	return (
 		<>
@@ -109,7 +113,7 @@ function App() {
 						</ul>
 					</div>
 
-					{backToTopIsVisible ? (
+					{/* {backToTopIsVisible ? (
 						<a href="#header">
 							<div className="back-to-top">
 								<i className="fa-solid fa-arrow-up"></i>
@@ -117,7 +121,7 @@ function App() {
 						</a>
 					) : (
 						""
-					)}
+					)} */}
 
 					<Navbar />
 					<PageProgress color="#ff6a3d" />

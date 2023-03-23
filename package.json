@@ -16,7 +16,8 @@
 		"react-page-progress": "^1.1.1",
 		"react-spinners": "^0.13.8",
 		"react-vertical-timeline-component": "^3.6.0",
-		"sass": "^1.58.0"
+		"sass": "^1.58.0",
+		"typed.js": "^2.0.132"
 	},
 	"devDependencies": {
 		"@types/react": "^18.0.27",

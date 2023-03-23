@@ -38,6 +38,10 @@ const Projects = () => {
 									className="info"
 									href="https://react-minifier.netlify.app/"
 									target="blank">
+									<p>
+										A react website using which you can minify your
+										HTML, CSS or JavaScript Code.
+									</p>
 									<span>Live link</span>
 								</a>
 							</div>
@@ -52,6 +56,10 @@ const Projects = () => {
 									className="info"
 									href="https://marvel-superhero-hunter.netlify.app/"
 									target="blank">
+									<p>
+										A site build using Marvel API.You can search for
+										any marvel hero and get info about them.
+									</p>
 									<span>Live link</span>
 								</a>
 							</div>

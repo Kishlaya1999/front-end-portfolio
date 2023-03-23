@@ -11,6 +11,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		justify-content: center;
 		padding: 0 50px;
 		font-size: 1.3rem;
 		color: $text-color-2;
@@ -34,11 +35,13 @@
 	}
 }
 
-@media screen and (min-width: 481px) and (max-width: 768px) {
-	.about{
-		.about-container{
-			width:100vw;
-			height:80vh;
+@media screen and (max-width: 768px) {
+	.about {
+		.about-container {
+			width: 100vw;
+			height: 90vh;
+			font-size: 1rem;
+			padding: 0 30px;
 		}
 	}
 }
