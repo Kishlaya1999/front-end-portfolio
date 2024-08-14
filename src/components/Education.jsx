@@ -16,7 +16,7 @@ const Education = () => {
 					className="vertical-timeline-element--work"
 					contentStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
 					contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
-					date="December 2021 - Present"
+					date="December 2021 - April 2023"
 					icon={<OnlineCourse />}
 					iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}>
 					<h3 className="vertical-timeline-element-title">Coding Ninjas</h3>
