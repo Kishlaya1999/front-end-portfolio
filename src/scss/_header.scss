@@ -10,8 +10,9 @@
 		position: relative;
 		// background: black;
 		width: 70vw;
-		height: 65vh;
+		min-height: 65vh;
 		display: flex;
+		margin: 0 auto;
 		align-items: center;
 		gap: 50px;
 		justify-content: space-between;
@@ -58,6 +59,7 @@
 					font-size: 1.3rem;
 					word-spacing: 2px;
 					letter-spacing: 1px;
+					text-align: justify;
 				}
 
 				.highlighted-text {
@@ -162,9 +164,12 @@
 
 @media screen and (max-width: 768px) {
 	.header {
+		height: 150vh;
+
 		.header-container {
 			width: 85vw;
-			height: 50vh;
+			height: auto;
+			padding: 50px 0;
 			flex-direction: column;
 
 			.my-info {
