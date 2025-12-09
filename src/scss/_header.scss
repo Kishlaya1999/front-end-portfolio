@@ -4,6 +4,7 @@
 	background-color: $primary;
 	color: white;
 	user-select: none;
+
 	.header-container {
 		z-index: 0;
 		position: relative;
@@ -26,22 +27,41 @@
 				color: $text-color-2;
 				font-size: 1.5rem;
 			}
+
 			.name {
 				color: $text-color-1;
 				font-size: 4rem;
 				text-shadow: -1px 1px $secondary;
 			}
+
 			.header-about {
 				color: $text-color-1;
 				font-size: 1.5rem;
 				word-spacing: 5px;
 				letter-spacing: 3px;
+
 				.header-skill {
 					color: $secondary;
 					// text-decoration-line: underline;
 					// text-decoration-style: wavy;
 					// text-decoration-color: $text-color-2;
 					// text-decoration-thickness: 3px;
+				}
+
+				.about-me {
+					display: flex;
+					margin-top: 20px;
+					flex-direction: column;
+					gap: 20px;
+					color: rgba($text-color-1, 0.5);
+					line-height: 1.1;
+					font-size: 1.3rem;
+					word-spacing: 2px;
+					letter-spacing: 1px;
+				}
+
+				.highlighted-text {
+					color: rgba($secondary, 0.8);
 				}
 			}
 		}
@@ -72,6 +92,7 @@
 				transition: all 0.3s ease;
 				filter: grayscale(1);
 			}
+
 			// .image-wrapper {
 			// 	// position: absolute;
 			// 	width: 100%;
@@ -83,11 +104,13 @@
 			.image-border {
 				transition: all 0.3s ease;
 			}
+
 			img:hover {
 				transform: translate(5px, -5px);
 				filter: grayscale(0);
 			}
-			img:hover + .image-border {
+
+			img:hover+.image-border {
 				background: $secondary;
 				transform: translate(-10px, -292px);
 			}
@@ -101,10 +124,12 @@
 			width: 85vw;
 
 			.my-info {
+
 				.hi,
 				.header-about {
 					font-size: 1.3rem;
 				}
+
 				.name {
 					font-size: 3.5rem;
 				}
@@ -120,9 +145,11 @@
 					min-width: 250px;
 					min-height: 250px;
 				}
-				img:hover + .image-border {
+
+				img:hover+.image-border {
 					transform: translate(-10px, -237px);
 				}
+
 				.image-border {
 					width: 250px;
 					height: 250px;
@@ -139,6 +166,7 @@
 			width: 85vw;
 			height: 50vh;
 			flex-direction: column;
+
 			.my-info {
 				order: 1;
 				text-align: center;
@@ -147,6 +175,7 @@
 				.header-about {
 					font-size: 1.3rem;
 				}
+
 				.name {
 					font-size: 3rem;
 				}
@@ -168,9 +197,10 @@
 					transform: none;
 				}
 
-				img:hover + .image-border {
+				img:hover+.image-border {
 					transform: translate(-10px, -237px);
 				}
+
 				.image-border {
 					display: none;
 					transform: none;

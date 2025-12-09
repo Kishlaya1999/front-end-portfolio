@@ -20,100 +20,89 @@ import PageProgress from "react-page-progress";
 import "animate.css";
 // import PacmanLoader from "react-spinners/PacmanLoader ";
 import HashLoader from "react-spinners/HashLoader";
+import PuffLoader from "react-spinners/PuffLoader";
+import Contact from "./components/Contact";
 
 function App() {
-	const [loading, setLoading] = useState(true);
-	// const [scroll, setScroll] = useState(0);
-	// const [backToTopIsVisible, setBackToTopIsVisible] = useState(false);
+  const [loading, setLoading] = useState(true);
+  // const [scroll, setScroll] = useState(0);
+  // const [backToTopIsVisible, setBackToTopIsVisible] = useState(false);
 
-	AOS.init({
-		duration: 1000,
-	});
+  AOS.init({
+    duration: 1000,
+  });
 
-	// const scrollFunction = () => {
-	// 	if (loading == false) {
-	// 		if (scroll > 300) {
-	// 			document.querySelector(".navbar-container").classList.add("hide-navbar");
-	// 			setBackToTopIsVisible(true);
-	// 		} else {
-	// 			document.querySelector(".navbar-container").classList.remove("hide-navbar");
-	// 			setBackToTopIsVisible(false);
-	// 		}
-	// 	}
-	// };
+  // const scrollFunction = () => {
+  // 	if (loading == false) {
+  // 		if (scroll > 300) {
+  // 			document.querySelector(".navbar-container").classList.add("hide-navbar");
+  // 			setBackToTopIsVisible(true);
+  // 		} else {
+  // 			document.querySelector(".navbar-container").classList.remove("hide-navbar");
+  // 			setBackToTopIsVisible(false);
+  // 		}
+  // 	}
+  // };
 
-	// useEffect(() => {
-	// 	scrollFunction();
-	// }, [scroll]);
+  // useEffect(() => {
+  // 	scrollFunction();
+  // }, [scroll]);
 
-	useEffect(() => {
-		setTimeout(() => {
-			setLoading(false);
-		}, 3000);
-	}, []);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
 
-	// document.addEventListener("scroll", () => {
-	// 	setScroll(document.documentElement.scrollTop);
-	// });
+  // document.addEventListener("scroll", () => {
+  // 	setScroll(document.documentElement.scrollTop);
+  // });
 
-	return (
-		<>
-			{loading ? (
-				// <PacmanLoader
-				// 	color=" #ff6a3d"
-				// 	speedMultiplier={1}
-				// 	loading={loading}
-				// 	// width={150}
-				// 	size={25}
-				// 	cssOverride={{
-				// 		display: "inherit",
-				// 		position: "absolute",
-				// 		width: "150px",
-				// 		// height: "6px",
-				// 		overflow: "hidden",
-				// 		backgroundClip: "padding-box",
-				// 		inset: "0",
-				// 		margin: "auto auto",
-				// 		zIndex: "10",
-				// 	}}
-				// />
-				<HashLoader
-					color="#ff6a3d"
-					size={100}
-					cssOverride={{
-						// display: "inherit",
-						position: "absolute",
-						overflow: "hidden",
-						// backgroundClip: "padding-box",
-						inset: "0",
-						margin: "auto auto",
-						zIndex: "10",
-					}}
-				/>
-			) : (
-				<div>
-					<div className="social-media-desktop">
-						<ul>
-							<li>
-								<a
-									href="https://github.com/Kishlaya1999"
-									target="blank"
-									title="GitHub">
-									<i className="fa-brands fa-github"></i>
-								</a>
-							</li>
-							<li>
-								<a
-									href="https://www.linkedin.com/in/kishlaya1999/"
-									target="blank"
-									title="LinkedIn">
-									<i className="fa-brands fa-linkedin-in"></i>
-								</a>
-							</li>
-						</ul>
-					</div>
+  if (loading) {
+    return (
+      <HashLoader
+        color="#FF6B3D"
+        size={100}
+        cssOverride={{
+          // display: "inherit",
+          position: "absolute",
+          overflow: "hidden",
+          // backgroundClip: "padding-box",
+          inset: "0",
+          margin: "auto auto",
+          zIndex: "10",
+        }}
+      />
+    );
+  }
 
-					{/* {backToTopIsVisible ? (
+  return (
+    <>
+      <div>
+        <div className="social-media-desktop">
+          <ul>
+            <li>
+              <a
+                href="https://github.com/Kishlaya1999"
+                target="blank"
+                title="GitHub"
+              >
+                <i className="fa-brands fa-github"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/kishlaya1999/"
+                target="blank"
+                title="LinkedIn"
+              >
+                <i className="fa-brands fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* {backToTopIsVisible ? (
 						<a href="#header">
 							<div className="back-to-top">
 								<i className="fa-solid fa-arrow-up"></i>
@@ -123,38 +112,41 @@ function App() {
 						""
 					)} */}
 
-					<Navbar />
-					<PageProgress color="#ff6a3d" />
-					<Header />
-					<About />
-					<Skills />
-					<Projects />
-					<Education />
-					<div className="social-media-small-devices">
-						<a
-							href="https://www.linkedin.com/in/kishlaya1999/"
-							target="blank"
-							title="LinkedIn">
-							<div className="linked-in">
-								<i className="fa-brands fa-linkedin-in"></i>
-								LinkedIn
-							</div>
-						</a>
-						<a
-							href="https://github.com/Kishlaya1999"
-							target="blank"
-							title="GitHub">
-							<div className="github">
-								<i className="fa-brands fa-github"></i>
-								GitHub
-							</div>
-						</a>
-					</div>
-					<Footer />
-				</div>
-			)}
-		</>
-	);
+        <Navbar />
+        <PageProgress color="#ff6a3d" />
+        <Header />
+        {/* <About /> */}
+        <Skills />
+        <Projects />
+        <Education />
+        <Contact />
+        <div className="social-media-small-devices">
+          <a
+            href="https://www.linkedin.com/in/kishlaya1999/"
+            target="blank"
+            title="LinkedIn"
+          >
+            <div className="linked-in">
+              <i className="fa-brands fa-linkedin-in"></i>
+              LinkedIn
+            </div>
+          </a>
+          <a
+            href="https://github.com/Kishlaya1999"
+            target="blank"
+            title="GitHub"
+          >
+            <div className="github">
+              <i className="fa-brands fa-github"></i>
+              GitHub
+            </div>
+          </a>
+        </div>
+        <Footer />
+      </div>
+      )
+    </>
+  );
 }
 
 export default App;

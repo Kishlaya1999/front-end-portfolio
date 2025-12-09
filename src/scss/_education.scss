@@ -1,5 +1,6 @@
 /** @format */
 .education {
+	background-color: $primary-alternate;
 	width: 100vw;
 	height: 130vh;
 	padding: 50px 0;
@@ -7,17 +8,26 @@
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+
 	.education-heading {
 		font-size: 2rem;
 		color: $secondary;
 		margin: 30px 0;
 	}
+
 	.education-heading::before {
-		content: "04. ";
+		content: "03. ";
 		color: white;
 		font-size: 1.3rem;
 		font-weight: 100;
 	}
+
+	.experience-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
 	.date-styles {
 		color: white;
 	}

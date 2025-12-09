@@ -14,43 +14,48 @@ $text-color-1: #9daaf2;
 $text-color-2: #f4db7d;
 
 .social-media-desktop {
-	position: fixed;
-	bottom: 0;
-	left: 55px;
-	background: $secondary;
-	// color: $secondary;
-	width: 5px;
-	height: 200px;
-	// text-align: center;
-	ul {
-		list-style-type: none;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-		gap: 20px;
-		a {
-			color: $secondary;
-		}
-		li {
-			width: 50px;
-			height: 50px;
-			// background-color: $primary;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			border-radius: 50%;
-			i {
-				transform: translate(0, -130px);
-				font-size: 1.5rem;
-				transition: all 0.3s ease;
-				&:hover {
-					color: $text-color-2;
-					cursor: pointer;
-				}
-			}
-		}
-	}
+  position: fixed;
+  bottom: 0;
+  left: 55px;
+  background: $secondary;
+  // color: $secondary;
+  width: 5px;
+  height: 200px;
+
+  // text-align: center;
+  ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+
+    a {
+      color: $secondary;
+    }
+
+    li {
+      width: 50px;
+      height: 50px;
+      // background-color: $primary;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+
+      i {
+        transform: translate(0, -130px);
+        font-size: 1.5rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: $text-color-2;
+          cursor: pointer;
+        }
+      }
+    }
+  }
 }
 
 // .back-to-top {
@@ -77,50 +82,51 @@ $text-color-2: #f4db7d;
 // }
 
 .social-media-small-devices {
-	display: none;
-	background: $secondary;
-	// display: flex;
-	justify-content: center;
-	gap: 30px;
-	padding: 10px 0;
-	font-size: 1.1rem;
+  display: none;
+  background: $secondary;
+  // display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 10px 0;
+  font-size: 1.1rem;
 
-	.linked-in i,
-	.github i {
-		margin: 0 10px;
-	}
-	a {
-		text-decoration: none;
-		color: $primary;
-		transition: all 0.3s ease-in-out;
+  .linked-in i,
+  .github i {
+    margin: 0 10px;
+  }
 
-		&:hover {
-			color: $text-color-2;
-		}
-	}
+  a {
+    text-decoration: none;
+    color: $primary;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: $text-color-1;
+    }
+  }
 }
 
 .header,
 .footer {
-	width: 100vw;
-	height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	scroll-snap-align: start;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
 }
 
 .about,
 .projects,
 .skills {
-	width: 100vw;
-	height: 100vh;
+  width: 100vw;
+  height: 100vh;
 }
 
 .footer {
-	height: 10vh;
-	background-color: $primary;
-	color: white;
+  height: 10vh;
+  background-color: $primary;
+  color: white;
 }
 
 @import "./scss/navbar";
@@ -135,6 +141,8 @@ $text-color-2: #f4db7d;
 
 @import "./scss//education";
 
+@import "./scss/contact";
+
 @import "./scss/footer";
 
 // @media screen and (min-width: 481px) and (max-width: 768px) {
@@ -142,12 +150,13 @@ $text-color-2: #f4db7d;
 
 // Small screens, laptops – 769px — 1024px.
 @media screen and (max-width: 1024px) {
-	.social-media-desktop {
-		display: none;
-	}
-	.social-media-small-devices {
-		display: flex;
-	}
+  .social-media-desktop {
+    display: none;
+  }
+
+  .social-media-small-devices {
+    display: flex;
+  }
 }
 
 // @media screen and (min-width: 481px) and (max-width: 768px) {
