@@ -1,7 +1,8 @@
 /** @format */
 
 import React from "react";
-import HabitTracker from "../assets/projects-images/habit_tracker.gif";
+// import HabitTracker from "../assets/projects-images/habit_tracker.gif";
+import PrimeFlix from "../assets/projects-images/primeflix.jpeg";
 import ReactMinifier from "../assets/projects-images/react_minifier.gif";
 import SuperheroHunter from "../assets/projects-images/superhero_hunter.gif";
 
@@ -12,16 +13,16 @@ const Projects = () => {
         <span className="projects-heading">Projects</span>
         <div className="personal-projects">
           <div className="project">
-            <img src={HabitTracker} alt="Habit Tracker" />
+            <img src={PrimeFlix} alt="Habit Tracker" />
             <div className="project-info">
-              <h2>Habit Tracker</h2>
+              <h2>PrimeFlix</h2>
               <p>
-                A react website which allows you to track your habit for 21 days
+                Developed a movie and TV discovery application using the TMDB
+                API with advanced search, filtering, TV details, ratings
+                visualization, and cast information. Focused on reusable
+                components, clean architecture, and maintainable code.
               </p>
-              <a
-                href="https://habit-tracker-using-redux.netlify.app/"
-                target="blank"
-              >
+              <a href="https://primeflix.kishlaya.dev/" target="blank">
                 View Project
               </a>
             </div>
