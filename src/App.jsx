@@ -1,151 +1,76 @@
-/** @format */
+import { useEffect, useRef } from "react";
 
-import { useState, useEffect } from "react";
-
-// Styling file
 import "./App.scss";
 
-// Components
+import FEATURE_FLAGS from "./config/featureFlags";
+import { ThemeProvider } from "./context/ThemeContext";
+import { DockSettingsProvider } from "./context/DockSettingsContext";
 import About from "./components/About";
+import Skills from "./components/Skills";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
+import DockNavigation from "./components/DockNavigation";
+import MenuBar from "./components/MenuBar/MenuBar";
 import Projects from "./components/Projects";
-import Skills from "./components/Skills";
 import Education from "./components/Education";
-
-// External libraries
-import AOS from "aos";
-import PageProgress from "react-page-progress";
-import "animate.css";
-// import PacmanLoader from "react-spinners/PacmanLoader ";
-import HashLoader from "react-spinners/HashLoader";
-import PuffLoader from "react-spinners/PuffLoader";
 import Contact from "./components/Contact";
+import useActiveSection from "./hooks/useActiveSection";
 
-function App() {
-  const [loading, setLoading] = useState(true);
-  // const [scroll, setScroll] = useState(0);
-  // const [backToTopIsVisible, setBackToTopIsVisible] = useState(false);
+import AOS from "aos";
+import "animate.css";
 
-  AOS.init({
-    duration: 1000,
-  });
+const showDock = FEATURE_FLAGS.NAVIGATION === "dock";
 
-  // const scrollFunction = () => {
-  // 	if (loading == false) {
-  // 		if (scroll > 300) {
-  // 			document.querySelector(".navbar-container").classList.add("hide-navbar");
-  // 			setBackToTopIsVisible(true);
-  // 		} else {
-  // 			document.querySelector(".navbar-container").classList.remove("hide-navbar");
-  // 			setBackToTopIsVisible(false);
-  // 		}
-  // 	}
-  // };
-
-  // useEffect(() => {
-  // 	scrollFunction();
-  // }, [scroll]);
+function NavbarActiveLinks() {
+  const activeSection = useActiveSection();
 
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
+    const navLinks = document.querySelectorAll(".nav-links a[href^='#']");
+    navLinks.forEach((link) => {
+      link.classList.toggle(
+        "nav-active",
+        link.getAttribute("href") === `#${activeSection}`
+      );
+    });
+  }, [activeSection]);
+
+  return null;
+}
+
+function App() {
+  const mainRef = useRef(null);
+
+  useEffect(() => {
+    AOS.init({ duration: 700 });
   }, []);
 
-  // document.addEventListener("scroll", () => {
-  // 	setScroll(document.documentElement.scrollTop);
-  // });
-
-  if (loading) {
-    return (
-      <HashLoader
-        color="#FF6B3D"
-        size={100}
-        cssOverride={{
-          // display: "inherit",
-          position: "absolute",
-          overflow: "hidden",
-          // backgroundClip: "padding-box",
-          inset: "0",
-          margin: "auto auto",
-          zIndex: "10",
-        }}
-      />
-    );
-  }
-
   return (
-    <>
-      <div>
-        <div className="social-media-desktop">
-          <ul>
-            <li>
-              <a
-                href="https://github.com/Kishlaya1999"
-                target="blank"
-                title="GitHub"
-              >
-                <i className="fa-brands fa-github"></i>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/kishlaya1999/"
-                target="blank"
-                title="LinkedIn"
-              >
-                <i className="fa-brands fa-linkedin-in"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
+    <ThemeProvider>
+      <DockSettingsProvider>
+        {showDock && <MenuBar mainRef={mainRef} />}
 
-        {/* {backToTopIsVisible ? (
-						<a href="#header">
-							<div className="back-to-top">
-								<i className="fa-solid fa-arrow-up"></i>
-							</div>
-						</a>
-					) : (
-						""
-					)} */}
+        {!showDock && (
+          <>
+            <Navbar />
+            <NavbarActiveLinks />
+          </>
+        )}
 
-        <Navbar />
-        <PageProgress color="#ff6a3d" />
-        <Header />
-        {/* <About /> */}
-        <Skills />
-        <Projects />
-        <Education />
-        <Contact />
-        <div className="social-media-small-devices">
-          <a
-            href="https://www.linkedin.com/in/kishlaya1999/"
-            target="blank"
-            title="LinkedIn"
-          >
-            <div className="linked-in">
-              <i className="fa-brands fa-linkedin-in"></i>
-              LinkedIn
-            </div>
-          </a>
-          <a
-            href="https://github.com/Kishlaya1999"
-            target="blank"
-            title="GitHub"
-          >
-            <div className="github">
-              <i className="fa-brands fa-github"></i>
-              GitHub
-            </div>
-          </a>
-        </div>
-        <Footer />
-      </div>
-      )
-    </>
+        <main ref={mainRef} className={showDock ? "main--dock" : "main--navbar"}>
+          <Header />
+          <About />
+          <Skills />
+          <Projects />
+          <Education />
+          <Contact />
+        </main>
+
+        {!showDock && <Footer />}
+
+        {showDock && <DockNavigation mainRef={mainRef} />}
+      </DockSettingsProvider>
+    </ThemeProvider>
   );
 }
 
