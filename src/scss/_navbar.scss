@@ -27,7 +27,7 @@
       transition: all 0.3s ease;
 
       &:hover {
-        text-shadow: 0 0 15px rgba($secondary, 0.5);
+        text-shadow: 0 0 15px var(--accent-glow);
       }
     }
 
@@ -53,7 +53,7 @@
 
         &:hover {
           color: var(--accent);
-          background: rgba($secondary, 0.06);
+          background: var(--accent-ghost);
         }
       }
 
@@ -77,7 +77,7 @@
         margin-left: 8px;
 
         &:hover {
-          background: rgba($secondary, 0.1);
+          background: var(--accent-bg-subtle);
           border-color: var(--accent);
           color: var(--accent);
         }
@@ -100,8 +100,8 @@
       margin-left: 8px;
 
       &:hover {
-        background: rgba($secondary, 0.1);
-        border-color: rgba($secondary, 0.3);
+        background: var(--accent-bg-subtle);
+        border-color: var(--accent-glow);
         transform: translateY(-1px);
       }
 

@@ -61,7 +61,7 @@
         transition: all 0.3s ease;
 
         &:hover {
-          text-shadow: 0 0 15px rgba(255, 106, 61, 0.5);
+          text-shadow: 0 0 15px var(--accent-glow);
         }
       }
 
@@ -69,8 +69,8 @@
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        background: rgba(255, 106, 61, 0.12);
-        border: 1px solid rgba(255, 106, 61, 0.25);
+        background: var(--accent-bg-subtle);
+        border: 1px solid var(--accent-border-subtle);
         color: var(--accent);
         padding: 8px 18px;
         border-radius: 999px;
@@ -189,7 +189,7 @@
 
           &:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 106, 61, 0.3);
+            box-shadow: 0 8px 25px var(--accent-glow);
           }
         }
 

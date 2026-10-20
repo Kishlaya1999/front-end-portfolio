@@ -71,7 +71,7 @@
       width: 42px;
       height: 42px;
       border-radius: 10px;
-      background: rgba($secondary, 0.1);
+      background: var(--accent-bg-subtle);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -111,7 +111,7 @@
       transform: translateY(-3px);
 
       .contact-info-card__icon {
-        background: rgba($secondary, 0.2);
+        background: var(--accent-border-subtle);
       }
     }
   }
@@ -153,9 +153,9 @@
 
         &:focus {
           outline: none;
-          border-color: rgba($secondary, 0.5);
+          border-color: var(--accent-glow);
           background: var(--glass-bg);
-          box-shadow: 0 0 20px rgba($secondary, 0.08);
+          box-shadow: 0 0 20px var(--accent-ghost);
         }
       }
 
@@ -191,7 +191,7 @@
 
       &:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba($secondary, 0.3);
+        box-shadow: 0 8px 25px var(--accent-glow);
       }
 
       &:active {
@@ -224,9 +224,9 @@
 
     &:hover {
       color: var(--accent);
-      border-color: rgba($secondary, 0.3);
+      border-color: var(--accent-glow);
       transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba($secondary, 0.15);
+      box-shadow: 0 6px 20px var(--accent-bg-subtle);
     }
   }
 }

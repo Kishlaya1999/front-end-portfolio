@@ -78,10 +78,10 @@
 
     &:hover {
       transform: translateY(-2px);
-      border-color: rgba($secondary, 0.3);
+      border-color: var(--accent-glow);
       box-shadow:
-        0 6px 20px rgba($secondary, 0.1),
-        0 0 12px rgba($secondary, 0.04);
+        0 6px 20px var(--accent-bg-subtle),
+        0 0 12px var(--accent-ghost);
       background: var(--glass-bg);
     }
   }

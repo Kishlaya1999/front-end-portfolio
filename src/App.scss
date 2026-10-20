@@ -19,10 +19,10 @@ $secondary: #ff6a3d;
   box-shadow: 0 8px 32px var(--glass-shadow);
 
   &:hover {
-    border-color: rgba($secondary, 0.2);
+    border-color: var(--accent-border-subtle);
     box-shadow:
       0 12px 40px var(--glass-shadow-hover),
-      0 0 20px rgba($secondary, 0.06);
+      0 0 20px var(--accent-ghost);
   }
 }
 

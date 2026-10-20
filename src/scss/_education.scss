@@ -95,9 +95,9 @@
 
     .experience-tech-chip {
       padding: 3px 10px;
-      background: rgba($secondary, 0.1);
+      background: var(--accent-bg-subtle);
       color: var(--accent);
-      border: 1px solid rgba($secondary, 0.2);
+      border: 1px solid var(--accent-border-subtle);
       border-radius: 20px;
       font-size: 0.72rem;
       font-weight: 500;
@@ -107,8 +107,8 @@
 
   .yoe {
     padding: 4px 14px;
-    background: rgba($secondary, 0.12);
-    border: 1px solid rgba($secondary, 0.25);
+    background: var(--accent-bg-subtle);
+    border: 1px solid var(--accent-border-subtle);
     border-radius: 20px;
     color: var(--accent);
     font-size: 0.8rem;

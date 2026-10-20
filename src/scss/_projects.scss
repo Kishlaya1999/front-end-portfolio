@@ -44,10 +44,10 @@
 
       &:hover {
         transform: translateY(-6px);
-        border-color: rgba($secondary, 0.25);
+        border-color: var(--accent-border-subtle);
         box-shadow:
           0 12px 40px var(--glass-shadow-hover),
-          0 0 20px rgba($secondary, 0.06);
+          0 0 20px var(--accent-ghost);
       }
 
       &--featured {
@@ -185,9 +185,9 @@
 
           .tech-badge {
             padding: 4px 12px;
-            background: rgba($secondary, 0.1);
+            background: var(--accent-bg-subtle);
             color: var(--accent);
-            border: 1px solid rgba($secondary, 0.2);
+            border: 1px solid var(--accent-border-subtle);
             border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 500;
