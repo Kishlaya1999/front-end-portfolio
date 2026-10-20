@@ -4,6 +4,7 @@ import "./App.scss";
 
 import FEATURE_FLAGS from "./config/featureFlags";
 import { ThemeProvider } from "./context/ThemeContext";
+import { DockSettingsProvider } from "./context/DockSettingsContext";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Footer from "./components/Footer";
@@ -46,27 +47,29 @@ function App() {
 
   return (
     <ThemeProvider>
-      {showDock && <MenuBar />}
+      <DockSettingsProvider>
+        {showDock && <MenuBar mainRef={mainRef} />}
 
-      {!showDock && (
-        <>
-          <Navbar />
-          <NavbarActiveLinks />
-        </>
-      )}
+        {!showDock && (
+          <>
+            <Navbar />
+            <NavbarActiveLinks />
+          </>
+        )}
 
-      <main ref={mainRef} className={showDock ? "main--dock" : "main--navbar"}>
-        <Header />
-        <About />
-        <Skills />
-        <Projects />
-        <Education />
-        <Contact />
-      </main>
+        <main ref={mainRef} className={showDock ? "main--dock" : "main--navbar"}>
+          <Header />
+          <About />
+          <Skills />
+          <Projects />
+          <Education />
+          <Contact />
+        </main>
 
-      {!showDock && <Footer />}
+        {!showDock && <Footer />}
 
-      {showDock && <DockNavigation mainRef={mainRef} />}
+        {showDock && <DockNavigation mainRef={mainRef} />}
+      </DockSettingsProvider>
     </ThemeProvider>
   );
 }

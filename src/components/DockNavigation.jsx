@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import Dock from "./Dock/Dock";
 import { useTheme } from "../context/ThemeContext";
 import useActiveSection from "../hooks/useActiveSection";
-import FEATURE_FLAGS from "../config/featureFlags";
+import { useDockSettings, SPRING_PRESETS } from "../context/DockSettingsContext";
 import GlassSurface from "./GlassSurface/GlassSurface";
 
 import homeIcon from "../assets/dock-icons/home.png";
@@ -25,9 +25,6 @@ const SECTIONS = [
   { id: "contact", label: "Contact", iconSrc: contactIcon },
 ];
 
-const useGlass = FEATURE_FLAGS.DOCK_GLASS;
-const glassMode = FEATURE_FLAGS.DOCK_GLASS_MODE;
-
 const DOCK_BASE = 50;
 const DOCK_PANEL_HEIGHT = 68;
 const DOCK_ROUNDNESS = 1;
@@ -44,12 +41,16 @@ const DockIcon = ({ src, alt }) => (
 
 const DockNavigation = ({ mainRef }) => {
   const { theme } = useTheme();
+  const { dockGlass, glassMode, magnification, gap, springPreset } = useDockSettings();
   const activeSection = useActiveSection();
   const wrapperRef = useRef(null);
   const [dockRect, setDockRect] = useState(null);
 
   useEffect(() => {
-    if (!useGlass) return;
+    if (!dockGlass) {
+      setDockRect(null);
+      return;
+    }
     const dockEl = wrapperRef.current?.querySelector(".dock");
     if (!dockEl) return;
     const update = () => {
@@ -62,7 +63,7 @@ const DockNavigation = ({ mainRef }) => {
     observer.observe(dockEl);
     update();
     return () => observer.disconnect();
-  }, []);
+  }, [dockGlass, magnification, gap, springPreset]);
 
   const navItems = SECTIONS.map((section) => ({
     icon: <DockIcon src={section.iconSrc} alt={section.label} />,
@@ -98,7 +99,7 @@ const DockNavigation = ({ mainRef }) => {
   return (
     <div className="dock-wrapper">
       <div className="dock-wrapper__inner" ref={wrapperRef}>
-        {useGlass && dockRect && (
+        {dockGlass && dockRect && (
           <div
             className="dock-glass-layer"
             style={{
@@ -126,13 +127,13 @@ const DockNavigation = ({ mainRef }) => {
         <Dock
           items={items}
           baseItemSize={DOCK_BASE}
-          magnification={130}
+          magnification={magnification}
           panelHeight={DOCK_PANEL_HEIGHT}
           accentColor="#ff6a3d"
           badgeColor="#ff453a"
           position="bottom"
           distance={200}
-          gap={10}
+          gap={gap}
           roundness={DOCK_ROUNDNESS}
           bounce={false}
           autoHide={false}
@@ -141,8 +142,8 @@ const DockNavigation = ({ mainRef }) => {
           showIndicators
           showBadges={false}
           theme={theme}
-          spring={{ mass: 0.1, stiffness: 420, damping: 20 }}
-          className={useGlass ? "dock--glass" : ""}
+          spring={SPRING_PRESETS[springPreset] || SPRING_PRESETS.snappy}
+          className={dockGlass ? "dock--glass" : ""}
         />
       </div>
     </div>
