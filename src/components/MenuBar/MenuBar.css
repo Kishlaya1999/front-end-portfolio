@@ -1,0 +1,124 @@
+/* ── Menu Bar ── */
+.menubar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 28px;
+  padding: 0 16px;
+  font-size: 13px;
+  background: var(--menubar-bg);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--glass-border-subtle);
+  user-select: none;
+}
+
+/* ── Left zone ── */
+.menubar__left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.menubar__logo {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: 2px;
+  transition: text-shadow 0.3s ease;
+}
+
+.menubar__logo:hover {
+  text-shadow: 0 0 10px rgba(255, 106, 61, 0.45);
+}
+
+.menubar__section {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.menubar__status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.menubar__status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #30d158;
+  flex-shrink: 0;
+  animation: menubar-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes menubar-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+
+/* ── Right zone ── */
+.menubar__right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.menubar__theme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 15px;
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 4px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.menubar__theme:hover {
+  background: var(--glass-bg-subtle);
+  color: var(--accent);
+}
+
+.menubar__clock {
+  color: var(--text-secondary);
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+/* ── Responsive ── */
+@media screen and (max-width: 768px) {
+  .menubar {
+    padding: 0 12px;
+  }
+
+  .menubar__status {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .menubar__left {
+    gap: 10px;
+  }
+
+  .menubar__right {
+    gap: 10px;
+  }
+}
