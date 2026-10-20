@@ -1,166 +1,137 @@
-/** @format */
-@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap");
 
-// Mobile devices – 320px — 480px.
-// iPads, Tablets – 481px — 768px.
-// Small screens, laptops – 769px — 1024px.
-// Desktops, large screens – 1025px — 1200px.
-// Extra large screens, TV – 1201px, and more.
-
-$primary: rgb(26, 34, 56);
-$primary-alternate: hsl(224, 37%, 22%);
 $secondary: #ff6a3d;
-$text-color-1: #9daaf2;
-$text-color-2: #f4db7d;
 
-.social-media-desktop {
+@mixin glass-subtle {
+  background: var(--glass-bg-subtle);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--glass-border-subtle);
+  border-radius: 10px;
+}
+
+@mixin glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px var(--glass-shadow);
+
+  &:hover {
+    border-color: rgba($secondary, 0.2);
+    box-shadow:
+      0 12px 40px var(--glass-shadow-hover),
+      0 0 20px rgba($secondary, 0.06);
+  }
+}
+
+@mixin section-gradient-primary {
+  background: var(--bg-primary);
+}
+
+@mixin section-gradient-alternate {
+  background: var(--bg-alternate);
+}
+
+.section-divider {
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
+  position: relative;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  &--primary {
+    background: transparent;
+    svg path {
+      fill: var(--bg-primary);
+    }
+  }
+
+  &--alternate {
+    background: transparent;
+    svg path {
+      fill: var(--bg-alternate);
+    }
+  }
+}
+
+// Layout classes toggled by feature flag
+.main--navbar {
+  padding-top: 70px;
+}
+
+.main--dock {
+  padding-top: 28px;
+  padding-bottom: 100px;
+}
+
+// Fixed-position dock wrapper
+.dock-wrapper {
   position: fixed;
   bottom: 0;
-  left: 55px;
-  background: $secondary;
-  // color: $secondary;
-  width: 5px;
-  height: 200px;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  pointer-events: none;
+  height: 120px;
 
-  // text-align: center;
-  ul {
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 20px;
-
-    a {
-      color: $secondary;
-    }
-
-    li {
-      width: 50px;
-      height: 50px;
-      // background-color: $primary;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-
-      i {
-        transform: translate(0, -130px);
-        font-size: 1.5rem;
-        transition: all 0.3s ease;
-
-        &:hover {
-          color: $text-color-2;
-          cursor: pointer;
-        }
-      }
-    }
+  &__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    pointer-events: auto;
   }
 }
 
-// .back-to-top {
-// 	width: 50px;
-// 	height: 50px;
-// 	border-radius: 50%;
-// 	background-color: $secondary;
-// 	position: fixed;
-// 	bottom: 50px;
-// 	right: 50px;
-// 	display: flex;
-// 	align-items: center;
-// 	justify-content: center;
-// 	color: #000;
-// 	font-size: 1.5rem;
-// 	box-shadow: 0 0 10px $secondary;
-// 	transition: all 0.3s ease;
-// 	cursor: pointer;
-// 	z-index: 5;
-
-// 	&:hover {
-// 		transform: translate(0, -10px);
-// 	}
-// }
-
-.social-media-small-devices {
-  display: none;
-  background: $secondary;
-  // display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding: 10px 0;
-  font-size: 1.1rem;
-
-  .linked-in i,
-  .github i {
-    margin: 0 10px;
-  }
-
-  a {
-    text-decoration: none;
-    color: $primary;
-    transition: all 0.3s ease-in-out;
-
-    &:hover {
-      color: $text-color-1;
-    }
-  }
+// GlassSurface layer positioned behind the dock panel
+// Mirrors the dock's own centering: left:50% + translateX(-50%) + bottom:12px
+.dock-glass-layer {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 1;
 }
 
-.header,
+// 3D PNG icons inside dock items
+.dock-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+// When glass is active, the Dock's built-in panel must be invisible
+.dock.dock--glass {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+  z-index: 2;
+}
+
 .footer {
-  width: 100vw;
-  height: 100vh;
+  min-height: 10vh;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   display: flex;
   justify-content: center;
   align-items: center;
-  scroll-snap-align: start;
-}
-
-.about,
-.projects,
-.skills {
-  width: 100vw;
-  height: 100vh;
-}
-
-.footer {
-  height: 10vh;
-  background-color: $primary;
-  color: white;
 }
 
 @import "./scss/navbar";
-
 @import "./scss/header";
-
 @import "./scss/about";
-
 @import "./scss/skills";
-
 @import "./scss/projects";
-
-@import "./scss//education";
-
+@import "./scss/education";
 @import "./scss/contact";
-
 @import "./scss/footer";
-
-// @media screen and (min-width: 481px) and (max-width: 768px) {
-// }
-
-// Small screens, laptops – 769px — 1024px.
-@media screen and (max-width: 1024px) {
-  .social-media-desktop {
-    display: none;
-  }
-
-  .social-media-small-devices {
-    display: flex;
-  }
-}
-
-// @media screen and (min-width: 481px) and (max-width: 768px) {
-// 	.social-media-desktop {
-// 		display: none;
-// 	}
-// }

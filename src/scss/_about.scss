@@ -1,47 +1,146 @@
-/** @format */
 .about {
-	background-color: $primary-alternate;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	.about-container {
-		width: 70vw;
-		height: 65vh;
-		// background-color: rgb(224, 224, 224);
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		padding: 0 50px;
-		font-size: 1.3rem;
-		color: $text-color-2;
-		line-height: 2rem;
-		// justify-content: center;
-		.about-heading {
-			font-size: 2rem;
-			color: $secondary;
-			margin: 30px 0;
-		}
-		.about-heading::before {
-			content: "01.";
-			color: white;
-			font-size: 1.3rem;
-			font-weight: 100;
-		}
-		p {
-			text-align: center;
-			margin: 10px 0;
-		}
-	}
+  background: var(--bg-alternate);
+  min-height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 0 3rem;
+  transition: background 0.3s ease;
+
+  .about-container {
+    width: 85vw;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    .about-heading {
+      font-size: 2rem;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      .section-number {
+        color: var(--section-number);
+        font-size: 1.3rem;
+        font-weight: 100;
+      }
+    }
+  }
+
+  .about-bio {
+    text-align: center;
+    max-width: 800px;
+
+    p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      line-height: 1.9;
+    }
+
+    .highlighted-text {
+      color: var(--accent);
+      font-weight: 600;
+    }
+  }
+
+  .about-meta-row {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+  }
+
+  .about-meta-tile {
+    @include glass-card;
+    padding: 1.25rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.35rem;
+    min-width: 160px;
+
+    .about-meta-icon {
+      font-size: 1.4rem;
+    }
+
+    .about-meta-icon--green {
+      color: #4ade80;
+    }
+
+    .about-meta-primary {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .about-meta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.72rem;
+      font-weight: 500;
+
+      svg {
+        font-size: 0.8rem;
+      }
+    }
+
+    .about-meta-badge--green {
+      color: #4ade80;
+    }
+  }
+
+  .about-meta-tile--experience {
+    .about-exp-years {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .about-exp-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .about-exp-company {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-top: 0.15rem;
+    }
+  }
 }
 
 @media screen and (max-width: 768px) {
-	.about {
-		.about-container {
-			width: 100vw;
-			height: 90vh;
-			font-size: 1rem;
-			padding: 0 30px;
-		}
-	}
+  .about {
+    padding: 4rem 0 2rem;
+
+    .about-container {
+      width: 90vw;
+
+      .about-heading {
+        font-size: 1.5rem;
+      }
+    }
+
+    .about-bio p {
+      font-size: 1rem;
+    }
+
+    .about-meta-row {
+      flex-direction: row;
+      gap: 1rem;
+    }
+
+    .about-meta-tile {
+      padding: 1rem 1.5rem;
+    }
+  }
 }

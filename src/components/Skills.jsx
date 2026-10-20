@@ -1,137 +1,67 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 
+const skillCategories = [
+  {
+    title: "UI & Frontend",
+    skills: [
+      { name: "React", icon: "logos:react" },
+      { name: "JavaScript", icon: "logos:javascript" },
+      { name: "TypeScript", icon: "logos:typescript-icon" },
+      { name: "Redux", icon: "logos:redux" },
+      { name: "Mantine", icon: "logos:mantine-icon" },
+      { name: "Sass", icon: "logos:sass" },
+      { name: "Tailwind CSS", icon: "logos:tailwindcss-icon" },
+      { name: "HTML", icon: "vscode-icons:file-type-html" },
+      { name: "CSS", icon: "devicon:css3" },
+    ],
+  },
+  {
+    title: "APIs & Backend",
+    skills: [
+      { name: "Node.js", icon: "vscode-icons:file-type-node" },
+      { name: "Express", icon: "simple-icons:express", color: "#fff" },
+      { name: "MongoDB", icon: "devicon:mongodb" },
+      { name: "REST APIs", icon: "mdi:api", color: "#58a6ff" },
+      { name: "JWT", icon: "logos:jwt-icon" },
+    ],
+  },
+  {
+    title: "DevOps & Tooling",
+    skills: [
+      { name: "Git", icon: "logos:git-icon" },
+      { name: "GitHub", icon: "mdi:github", color: "#fff" },
+      { name: "Jira", icon: "devicon:jira" },
+      { name: "Postman", icon: "logos:postman-icon" },
+    ],
+  },
+];
+
 const Skills = () => {
   return (
-    <div id="skills" className="skills">
-      <section className="skills-section">
-        <h2 className="skills-heading">
-          <span className="skill-numbering">01.</span>Skills
+    <section id="skills" className="skills">
+      <div className="skills-container">
+        <h2 className="skills-heading" data-aos="fade-up">
+          <span className="section-number">02.</span>Tech Stack
         </h2>
 
-        {/* Featured Skills */}
-        {/* <div className="skill-category">
-          <h3>Featured</h3>
-          <div className="skill-grid">
-            <div className="skill-item">
-              <Icon icon="simple-icons:astro" /> Astro
+        <div className="skills-groups">
+          {skillCategories.map((category) => (
+            <div className="skills-group" key={category.title} data-aos="fade-up" data-aos-delay="100">
+              <span className="skills-group__label">{category.title}</span>
+              <div className="skills-chips">
+                {category.skills.map((skill) => (
+                  <div className="skills-chip" key={skill.name} title={skill.name}>
+                    <Icon icon={skill.icon} color={skill.color} />
+                    <span>{skill.name}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="skill-item">
-              <Icon icon="simple-icons:css3" /> CSS
-            </div>
-            <div className="skill-item">
-              <Icon icon="simple-icons:html5" /> HTML
-            </div>
-            <div className="skill-item">
-              <Icon icon="simple-icons:javascript" /> JavaScript
-            </div>
-            <div className="skill-item">
-              <Icon icon="simple-icons:nuxt" /> Nuxt
-            </div>
-          </div>
-        </div> */}
-
-        {/* Languages */}
-        {/* <div className="skill-category">
-          <h3>Languages</h3>
-          <div className="skill-grid">
-            <div className="skill-item">
-              <Icon icon="logos:javascript" /> JavaScript
-            </div>
-            <div className="skill-item">
-              <Icon icon="devicon:java" /> Java
-            </div>
-          </div>
-        </div> */}
-
-        {/* Frontend */}
-        <div className="skill-category">
-          <h3>Frontend</h3>
-          <div className="skill-grid">
-            <div className="skill-item" title="JavaScript">
-              <Icon icon="logos:javascript" /> <span className="skill-name">JavaScript</span>
-            </div>
-            <div className="skill-item" title="React">
-              <Icon icon="logos:react" /> <span className="skill-name">React</span>
-            </div>
-            <div className="skill-item" title="Redux">
-              <Icon icon="logos:redux" /> <span className="skill-name">Redux</span>
-            </div>
-            {/* <div className="skill-item">
-              <Icon icon="vscode-icons:file-type-reactrouter" /> React Router
-            </div> */}
-            {/* <div className="skill-item">
-              <Icon icon="logos:mantine-icon" /> Mantine
-            </div>
-            <div className="skill-item">
-              <Icon icon="simple-icons:mui" color="#0472E7" /> Material UI
-            </div> */}
-            <div className="skill-item" title="Sass">
-              <Icon icon="logos:sass" /> <span className="skill-name">Sass</span>
-            </div>
-            <div className="skill-item" title="Tailwind CSS">
-              <Icon icon="logos:tailwindcss-icon" /> <span className="skill-name">Tailwind CSS</span>
-            </div>
-            {/* <div className="skill-item">
-              <Icon icon="devicon:reactbootstrap" /> React Bootstrap
-            </div> */}
-            <div className="skill-item" title="Bootstrap">
-              <Icon icon="logos:bootstrap" /> <span className="skill-name">Bootstrap</span>
-            </div>
-            <div className="skill-item" title="HTML">
-              <Icon icon="vscode-icons:file-type-html" /> <span className="skill-name">HTML</span>
-            </div>
-            <div className="skill-item" title="CSS">
-              <Icon icon="devicon:css3" /> <span className="skill-name">CSS</span>
-            </div>
-          </div>
+          ))}
         </div>
-
-        {/* Backend */}
-        <div className="skill-category">
-          <h3>Backend</h3>
-          <div className="skill-grid">
-            <div className="skill-item" title="Node.js">
-              <Icon icon="vscode-icons:file-type-node" />  <span className="skill-name">Node.js</span>
-            </div>
-            <div className="skill-item" title="Express">
-              <Icon icon="simple-icons:express" color="#fff" /> <span className="skill-name">Express</span>
-            </div>
-            <div className="skill-item" title="MongoDB">
-              <Icon icon="devicon:mongodb" />   <span className="skill-name">MongoDB</span>
-            </div>
-            <div className="skill-item" title="JWT">
-              <Icon icon="logos:jwt-icon" /> <span className="skill-name">JWT</span>
-            </div>
-            {/* <div className="skill-item">
-              <Icon icon="simple-icons:socketdotio" color="#fff" /> Socket.io
-            </div> */}
-          </div>
-        </div>
-
-        {/* Tools */}
-        <div className="skill-category">
-          <h3>Tools</h3>
-          <div className="skill-grid">
-            <div className="skill-item" title="Git">
-              <Icon icon="logos:git-icon" /> <span className="skill-name">Git</span>
-            </div>
-            <div className="skill-item" title="GitHub">
-              <Icon icon="mdi:github" color="#fff" /> <span className="skill-name">GitHub</span>
-            </div>
-            <div className="skill-item" title="Jira">
-              <Icon icon="devicon:jira" /> <span className="skill-name">Jira</span>
-            </div>
-            <div className="skill-item" title="Postman">
-              <Icon icon="logos:postman-icon" /> <span className="skill-name">Postman</span>
-            </div>
-            {/* <div className="skill-item">
-              <Icon icon="logos:new-relic-icon" /> New Relic
-            </div> */}
-          </div>
-        </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 
