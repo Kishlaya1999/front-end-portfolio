@@ -1,45 +1,161 @@
+/* ── Dark theme (default) ── */
+:root {
+  --bg-body: rgb(26, 34, 56);
+  --bg-primary: rgb(26, 34, 56);
+  --bg-primary-dark: rgb(22, 29, 48);
+  --bg-alternate: hsl(224, 37%, 22%);
+  --bg-alternate-dark: hsl(224, 37%, 19%);
+
+  --text-primary: #ffffff;
+  --text-heading: #9daaf2;
+  --text-secondary: rgba(157, 170, 242, 0.85);
+  --text-muted: rgba(157, 170, 242, 0.55);
+
+  --accent: #ff6a3d;
+  --accent-highlight: #f4db7d;
+
+  /* Glass card */
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: rgba(0, 0, 0, 0.12);
+  --glass-shadow-hover: rgba(0, 0, 0, 0.3);
+  --glass-inset: rgba(255, 255, 255, 0.06);
+
+  /* Glass subtle */
+  --glass-bg-subtle: rgba(255, 255, 255, 0.06);
+  --glass-border-subtle: rgba(255, 255, 255, 0.08);
+
+  /* Navbar */
+  --navbar-bg: rgba(26, 34, 56, 0.72);
+  --navbar-border: rgba(255, 255, 255, 0.06);
+  --navbar-link: rgba(255, 255, 255, 0.85);
+  --navbar-mobile-bg: rgba(26, 34, 56, 0.85);
+
+  /* Menu bar */
+  --menubar-bg: rgba(26, 34, 56, 0.82);
+
+  /* Gradient orbs */
+  --orb-color-1: rgba(255, 106, 61, 0.12);
+  --orb-color-2: rgba(244, 219, 125, 0.08);
+
+  /* Shadows */
+  --shadow-soft: 0 2px 12px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 8px 32px rgba(0, 0, 0, 0.2);
+
+  /* Misc */
+  --section-number: #ffffff;
+  --timeline-line: rgba(255, 255, 255, 0.1);
+  --timeline-arrow: rgba(255, 255, 255, 0.08);
+  --input-placeholder: rgba(255, 255, 255, 0.3);
+  --label-color: rgba(255, 255, 255, 0.8);
+  --footer-border: rgba(255, 255, 255, 0.06);
+  --footer-text: rgba(255, 255, 255, 0.4);
+  --footer-text-muted: rgba(255, 255, 255, 0.25);
+  --project-overlay-bg: rgba(26, 34, 56, 0.85);
+  --project-text: rgba(255, 255, 255, 0.8);
+  --skill-text: rgba(255, 255, 255, 0.85);
+  --education-title: #ffffff;
+  --education-subtitle: rgba(157, 170, 242, 0.8);
+  --date-text: rgba(255, 255, 255, 0.6);
+  --cta-secondary-hover-bg: rgba(255, 106, 61, 0.1);
+  --hamburger-color: #9daaf2;
+  --hamburger-hover-bg: rgba(255, 255, 255, 0.05);
+}
+
+/* ── Light theme ── */
+[data-theme="light"] {
+  --bg-body: #f5f5f7;
+  --bg-primary: #ffffff;
+  --bg-primary-dark: #f0f0f2;
+  --bg-alternate: #f5f5f7;
+  --bg-alternate-dark: #ededf0;
+
+  --text-primary: #1d1d1f;
+  --text-heading: #1d1d1f;
+  --text-secondary: #6e6e73;
+  --text-muted: #aeaeb2;
+
+  --accent: #ff6a3d;
+  --accent-highlight: #d4890a;
+
+  /* Glass card */
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-shadow: rgba(0, 0, 0, 0.04);
+  --glass-shadow-hover: rgba(0, 0, 0, 0.08);
+  --glass-inset: rgba(255, 255, 255, 0.5);
+
+  /* Glass subtle */
+  --glass-bg-subtle: rgba(0, 0, 0, 0.03);
+  --glass-border-subtle: rgba(0, 0, 0, 0.06);
+
+  /* Navbar */
+  --navbar-bg: rgba(255, 255, 255, 0.72);
+  --navbar-border: rgba(0, 0, 0, 0.08);
+  --navbar-link: #1d1d1f;
+  --navbar-mobile-bg: rgba(255, 255, 255, 0.92);
+
+  /* Menu bar */
+  --menubar-bg: rgba(255, 255, 255, 0.82);
+
+  /* Gradient orbs */
+  --orb-color-1: rgba(255, 106, 61, 0.06);
+  --orb-color-2: rgba(157, 170, 242, 0.06);
+
+  /* Shadows */
+  --shadow-soft: 0 2px 12px rgba(0, 0, 0, 0.04);
+  --shadow-medium: 0 8px 32px rgba(0, 0, 0, 0.06);
+
+  /* Misc */
+  --section-number: #6e6e73;
+  --timeline-line: rgba(0, 0, 0, 0.1);
+  --timeline-arrow: rgba(0, 0, 0, 0.06);
+  --input-placeholder: rgba(0, 0, 0, 0.3);
+  --label-color: #1d1d1f;
+  --footer-border: rgba(0, 0, 0, 0.06);
+  --footer-text: #6e6e73;
+  --footer-text-muted: #aeaeb2;
+  --project-overlay-bg: rgba(255, 255, 255, 0.88);
+  --project-text: #424245;
+  --skill-text: #1d1d1f;
+  --education-title: #1d1d1f;
+  --education-subtitle: #6e6e73;
+  --date-text: #6e6e73;
+  --cta-secondary-hover-bg: rgba(255, 106, 61, 0.08);
+  --hamburger-color: #1d1d1f;
+  --hamburger-hover-bg: rgba(0, 0, 0, 0.04);
+}
+
 * {
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
-     font-family: "League Spartan", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
 }
 
 html {
-     scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body::-webkit-scrollbar {
-     /* width: 20px;
-     background: hsl(224, 37%, 29%); */
-     display: none;
+  display: none;
 }
-
-/* body::-webkit-scrollbar-thumb {
-     background-color: #ff6a3d;
-     margin: 0 10px;
-     width: 10px;
-     border-radius: 10px;
-} */
 
 body {
-     width: 100vw;
-     height: 100vh;
-     margin: 0;
-     overflow-x: hidden;
-     background-color: rgb(26, 34, 56);
-     /* scroll-behavior: smooth; */
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* scroll-behavior: smooth; */
-/* #root {
-     overflow-x: hidden;
-     scroll-snap-type: y proximity;
-     overflow-y: scroll;
-     width: 100%;
-     height: 100%;
-} */
-
-/* #root::-webkit-scrollbar {
-     display: none;
-} */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
