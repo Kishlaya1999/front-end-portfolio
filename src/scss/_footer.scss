@@ -1,14 +1,42 @@
-/** @format */
 .footer {
-  background-color: $primary-alternate;
-  position: relative;
-  z-index: 1;
-  .main-line {
-    word-spacing: 5px;
-    letter-spacing: 3px;
-    font-size: 1.2rem;
+  background-color: var(--bg-primary-dark);
+  border-top: 1px solid var(--footer-border);
+  padding: 2rem 0 1.5rem;
+  min-height: auto;
+  height: auto;
+  transition: background-color 0.3s ease;
+
+  .footer-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  &-name {
-    color: $text-color-2;
+
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-credit {
+    color: var(--footer-text);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+
+  .footer-name {
+    color: var(--accent-highlight);
+    font-weight: 500;
+  }
+
+  .footer-copyright {
+    color: var(--footer-text-muted);
+    font-size: 0.8rem;
   }
 }
