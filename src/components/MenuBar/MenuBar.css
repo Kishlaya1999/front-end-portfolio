@@ -294,26 +294,10 @@
   border: 1px solid var(--glass-border);
   border-radius: 6px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-  z-index: 71;
+  z-index: 70;
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
-
-.menubar__config-panel--glass {
-  background: transparent;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  border-color: transparent;
-  box-shadow: none;
-}
-
-.menubar__config-glass {
-  position: absolute;
-  top: calc(100% + 4px);
-  right: 0;
-  z-index: 70;
-  pointer-events: none;
 }
 
 .menubar__config-row {

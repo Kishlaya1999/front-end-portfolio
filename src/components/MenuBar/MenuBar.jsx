@@ -4,7 +4,6 @@ import { useTheme } from "../../context/ThemeContext";
 import { useDockSettings, SPRING_PRESETS } from "../../context/DockSettingsContext";
 import { DARK_THEMES, LIGHT_THEMES } from "../../config/themes";
 import useActiveSection from "../../hooks/useActiveSection";
-import GlassSurface from "../GlassSurface/GlassSurface";
 import "./MenuBar.css";
 
 const SECTION_LABELS = {
@@ -37,7 +36,7 @@ const sliderFill = (value, min, max) => ({
   "--fill": `${((value - min) / (max - min)) * 100}%`,
 });
 
-const MenuBar = ({ mainRef }) => {
+const MenuBar = () => {
   const { theme, toggleTheme, variant, setVariant } = useTheme();
   const {
     dockGlass, setDockGlass,
@@ -51,10 +50,8 @@ const MenuBar = ({ mainRef }) => {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [dockConfigOpen, setDockConfigOpen] = useState(false);
   const [variantOpen, setVariantOpen] = useState(false);
-  const [panelRect, setPanelRect] = useState(null);
   const settingsRef = useRef(null);
   const dockConfigRef = useRef(null);
-  const configPanelRef = useRef(null);
   const variantRef = useRef(null);
 
   useEffect(() => {
@@ -104,27 +101,6 @@ const MenuBar = ({ mainRef }) => {
       document.removeEventListener("keydown", handleEscape);
     };
   }, [variantOpen]);
-
-  useEffect(() => {
-    if (!dockConfigOpen || !dockGlass) {
-      setPanelRect(null);
-      return;
-    }
-    const el = configPanelRef.current;
-    if (!el) return;
-    const update = () => {
-      setPanelRect({ width: el.offsetWidth, height: el.offsetHeight });
-    };
-    const observer = new ResizeObserver(update);
-    observer.observe(el);
-    update();
-    return () => observer.disconnect();
-  }, [dockConfigOpen, dockGlass]);
-
-  const glassProps =
-    glassMode === "refraction"
-      ? { backdrop: mainRef, renderer: "auto" }
-      : { distortionScale: -180, displace: 0.5, backgroundOpacity: 0.1 };
 
   const openSettings = () => {
     setDockConfigOpen(false);
@@ -259,33 +235,7 @@ const MenuBar = ({ mainRef }) => {
           </button>
 
           {dockConfigOpen && (
-            <>
-              {dockGlass && panelRect && (
-                <div
-                  className="menubar__config-glass"
-                  style={{ width: panelRect.width, height: panelRect.height }}
-                >
-                  <GlassSurface
-                    width={panelRect.width}
-                    height={panelRect.height}
-                    borderRadius={6}
-                    borderWidth={0.07}
-                    brightness={50}
-                    opacity={0.93}
-                    blur={11}
-                    saturation={1}
-                    redOffset={0}
-                    greenOffset={10}
-                    blueOffset={20}
-                    refraction
-                    {...glassProps}
-                  />
-                </div>
-              )}
-              <div
-                className={`menubar__config-panel${dockGlass ? " menubar__config-panel--glass" : ""}`}
-                ref={configPanelRef}
-              >
+              <div className="menubar__config-panel">
               <div className="menubar__config-row">
                 <Icon icon="mdi:magnify-plus-outline" className="menubar__config-icon" />
                 <span className="menubar__config-label">Magnification</span>
@@ -334,7 +284,6 @@ const MenuBar = ({ mainRef }) => {
                 </select>
               </div>
             </div>
-            </>
           )}
         </div>
 

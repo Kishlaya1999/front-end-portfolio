@@ -48,7 +48,7 @@ function App() {
   return (
     <ThemeProvider>
       <DockSettingsProvider>
-        {showDock && <MenuBar mainRef={mainRef} />}
+        {showDock && <MenuBar />}
 
         {!showDock && (
           <>
