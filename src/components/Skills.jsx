@@ -12,8 +12,6 @@ const skillCategories = [
       { name: "Mantine", icon: "logos:mantine-icon" },
       { name: "Sass", icon: "logos:sass" },
       { name: "Tailwind CSS", icon: "logos:tailwindcss-icon" },
-      { name: "HTML", icon: "vscode-icons:file-type-html" },
-      { name: "CSS", icon: "devicon:css3" },
     ],
   },
   {
@@ -24,15 +22,20 @@ const skillCategories = [
       { name: "MongoDB", icon: "devicon:mongodb" },
       { name: "REST APIs", icon: "mdi:api", color: "#58a6ff" },
       { name: "JWT", icon: "logos:jwt-icon" },
+      { name: "Redis", icon: "devicon:redis" },
+      { name: "Kafka", icon: "logos:kafka-icon" },
     ],
   },
   {
-    title: "DevOps & Tooling",
+    title: "Tooling",
     skills: [
       { name: "Git", icon: "logos:git-icon" },
       { name: "GitHub", icon: "mdi:github", color: "#fff" },
-      { name: "Jira", icon: "devicon:jira" },
       { name: "Postman", icon: "logos:postman-icon" },
+      { name: "Figma", icon: "logos:figma" },
+      { name: "Bruno", icon: "devicon:bruno" },
+      { name: "New Relic", icon: "simple-icons:newrelic", color: "#1CE783" },
+      { name: "GitLab", icon: "logos:gitlab-icon" },
     ],
   },
 ];
@@ -42,7 +45,7 @@ const Skills = () => {
     <section id="skills" className="skills">
       <div className="skills-container">
         <h2 className="skills-heading" data-aos="fade-up">
-          <span className="section-number">02.</span>Tech Stack
+          Skills
         </h2>
 
         <div className="skills-groups">
