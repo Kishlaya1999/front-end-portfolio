@@ -85,7 +85,7 @@ const Projects = () => {
     <section id="projects" className="projects">
       <div className="project-container">
         <h2 className="projects-heading" data-aos="fade-up">
-          <span className="section-number">03.</span>Projects
+          Projects
         </h2>
         <div className="projects-grid">
           {projects.map((project, index) => (

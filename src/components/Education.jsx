@@ -20,7 +20,7 @@ const Education = () => {
   return (
     <section id="education" className="education">
       <h2 className="education-heading" data-aos="fade-up">
-        <span className="section-number">04.</span>Experience
+        Experience
       </h2>
       <VerticalTimeline layout="1-column-left">
         <VerticalTimelineElement
