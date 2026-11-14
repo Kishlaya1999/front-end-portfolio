@@ -163,6 +163,29 @@
         }
       }
 
+      .header-location-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+
+        .location-tag {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          padding: 8px 20px;
+          border-radius: 50px;
+          font-size: 0.9rem;
+          font-weight: 500;
+          color: var(--accent);
+          background: rgba(var(--accent-rgb, 46, 204, 113), 0.1);
+          border: 1px solid var(--accent);
+
+          svg {
+            font-size: 1.05rem;
+          }
+        }
+      }
+
       .header-cta {
         display: flex;
         flex-wrap: wrap;
@@ -189,8 +212,8 @@
 
           &:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px var(--accent-glow);
           }
+
         }
 
         .cta-secondary {
@@ -316,6 +339,10 @@
         }
 
         .header-tags {
+          justify-content: center;
+        }
+
+        .header-location-tags {
           justify-content: center;
         }
 

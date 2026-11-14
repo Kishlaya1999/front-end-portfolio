@@ -1,19 +1,16 @@
 import React, { useEffect, useRef } from "react";
 import { Icon } from "@iconify/react";
 import Typed from "typed.js";
-import { getExperienceShort } from "../utils/experience";
+import { getExperienceYearsMonths } from "../utils/experience";
 import HeroProfileCard from "./HeroProfileCard";
 
-const techTags = ["React", "JavaScript", "Node.js", "MongoDB", "Git"];
-
-const stats = [
-  { value: "1,600+", label: "Commits" },
-  { value: "800+", label: "Pull Requests" },
-];
+const techTags = ["React", "Express.js", "MongoDB", "Node.js", "Redux"];
 
 const Header = () => {
   const el = useRef(null);
-  const yearsExp = getExperienceShort();
+  const { years, months } = getExperienceYearsMonths();
+  const decimal = months > 0 ? (months / 12).toFixed(1).replace(/^0/, "") : "";
+  const expLabel = `${years}${decimal}+`;
 
   useEffect(() => {
     const typed = new Typed(el.current, {
@@ -50,13 +47,17 @@ const Header = () => {
           </span>
 
           <p className="header-tagline" data-aos="fade-up" data-aos-delay="200">
-            Software Engineer with {yearsExp} years of experience building
+            Software Engineer with {expLabel} years of experience building
             scalable web applications and end-to-end product features at a
             fast-paced startup.
           </p>
 
           <div className="header-stats" data-aos="fade-up" data-aos-delay="250">
-            {stats.map((stat, i) => (
+            {[
+              { value: `${expLabel}`, label: "Years of Experience" },
+              { value: "1,600+", label: "Commits" },
+              { value: "800+", label: "Pull Requests" },
+            ].map((stat, i) => (
               <div className="header-stat" key={i}>
                 <span className="header-stat__value">{stat.value}</span>
                 <span className="header-stat__label">{stat.label}</span>
@@ -70,24 +71,26 @@ const Header = () => {
             ))}
           </div>
 
-          <div className="header-cta" data-aos="fade-up" data-aos-delay="300">
+          <div className="header-location-tags" data-aos="fade-up" data-aos-delay="320">
+            <span className="location-tag">
+              <Icon icon="mdi:map-marker" />
+              Chennai, India
+            </span>
+            <span className="location-tag">
+              <Icon icon="mdi:earth" />
+              Open to Relocation
+            </span>
+          </div>
+
+          <div className="header-cta" data-aos="fade-up" data-aos-delay="350">
             <a
-              href="/resume.pdf"
-              className="cta-primary"
+              href="https://drive.google.com/file/d/19R061U9vAzzifzcBuTVcZDU4lAqg6ASL/view"
+              className="cta-primary no-grow"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Icon icon="mdi:download" />
-              Download Resume
-            </a>
-            <a
-              href="https://github.com/kishlaya1999"
-              className="cta-secondary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Icon icon="mdi:github" />
-              GitHub
+              <Icon icon="mdi:file-document-outline" />
+              Resume
             </a>
           </div>
         </div>
