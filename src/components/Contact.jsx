@@ -14,18 +14,19 @@ const infoCards = [
     value: "+91 7651985596",
     href: "tel:+917651985596",
   },
-];
-
-const socialLinks = [
   {
     icon: "mdi:linkedin",
     label: "LinkedIn",
+    value: "kishlaya1999",
     href: "https://www.linkedin.com/in/kishlaya1999/",
+    external: true,
   },
   {
     icon: "mdi:github",
     label: "GitHub",
+    value: "Kishlaya1999",
     href: "https://github.com/Kishlaya1999",
+    external: true,
   },
 ];
 
@@ -48,7 +49,7 @@ const Contact = () => {
     <section id="contact" className="contact">
       <div className="contact-container">
         <h2 className="contact-heading" data-aos="fade-up">
-          <span className="section-number">05.</span>Contact
+          Contact
         </h2>
         <p className="contact-intro" data-aos="fade-up" data-aos-delay="100">
           Have a question or want to work together? Feel free to reach out!
@@ -116,6 +117,7 @@ const Contact = () => {
                   key={card.label}
                   href={card.href}
                   className="contact-info-card"
+                  {...(card.external ? { target: "_blank", rel: "noreferrer" } : {})}
                 >
                   <div className="contact-info-card__icon">
                     <Icon icon={card.icon} />
@@ -124,20 +126,6 @@ const Contact = () => {
                     <span className="contact-info-card__label">{card.label}</span>
                     <span className="contact-info-card__value">{card.value}</span>
                   </div>
-                </a>
-              ))}
-            </div>
-            <div className="contact-info-socials">
-              {socialLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="contact-social-icon"
-                  target="_blank"
-                  rel="noreferrer"
-                  title={link.label}
-                >
-                  <Icon icon={link.icon} />
                 </a>
               ))}
             </div>
