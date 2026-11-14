@@ -1,15 +1,12 @@
 import React from "react";
-import { Icon } from "@iconify/react";
-import { getExperienceShort } from "../utils/experience";
 
 const About = () => {
-  const yearsExp = getExperienceShort();
 
   return (
     <section id="about" className="about">
       <div className="about-container">
         <h2 className="about-heading" data-aos="fade-up">
-          <span className="section-number">01.</span>About Me
+          About Me
         </h2>
 
         <div className="about-bio" data-aos="fade-up" data-aos-delay="100">
@@ -23,21 +20,16 @@ const About = () => {
           </p>
         </div>
 
-        <div className="about-meta-row" data-aos="fade-up" data-aos-delay="150">
-          <div className="about-meta-tile about-meta-tile--location">
-            <Icon icon="mdi:map-marker-outline" className="about-meta-icon about-meta-icon--green" />
-            <span className="about-meta-primary">India</span>
-            <span className="about-meta-badge about-meta-badge--green">
-              <Icon icon="mdi:check-circle-outline" />
-              Open to Opportunities
-            </span>
-          </div>
-
-          <div className="about-meta-tile about-meta-tile--experience">
-            <span className="about-exp-years">{yearsExp}</span>
-            <span className="about-exp-label">Years</span>
-            <span className="about-exp-company">@ Opsera</span>
-          </div>
+        <div className="about-roles" data-aos="fade-up" data-aos-delay="150">
+          <h3 className="about-roles__heading">Roles & Responsibilities</h3>
+          <ul className="about-roles__list">
+            <li>Developed cross-service features spanning multiple backend microservices</li>
+            <li>Develop reusable component libraries and shared internal packages</li>
+            <li>Build features, enhancements, and fixes in existing codebases</li>
+            <li>Collaborate with product and QA teams to ship reliably</li>
+            <li>Debug and resolve production issues across distributed environments</li>
+            <li>Engage with customers to investigate and resolve live incidents</li>
+          </ul>
         </div>
       </div>
     </section>
